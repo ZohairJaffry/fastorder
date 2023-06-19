@@ -131,7 +131,7 @@ require_once __DIR__ . '/Config/Config.php';
                         <!-- Left Sidebar -->
                         <div class="col-lg-5" id="mainContent">
                             <!-- Filter Area -->
-                            <div class="order-header" style="width: 514px;">
+                            <div class="order-header" style="width: 514px;height:60px; margin-top: 30px;">
                                 <ul style="display:flex">
                                           <li style="margin-left: 10%; ">  <h6 class="wizard-header text-white">
                                             Product Name</h6> </li>
@@ -783,14 +783,14 @@ require_once __DIR__ . '/Config/Config.php';
                                             </div>
                                             <!-- Cart Items End -->
                                             <!-- Delivery Fee -->
-                                            <div class="row">
+                                            <!-- <div class="row">
                                                 <div class="col-md-12 col-sm-12">
                                                     <label class="cbx radio-wrapper no-edges">
                                                         <input type="radio" value="delivery" name="transfer" checked> <span class="checkmark"></span>
                                                         <span class="radio-caption">Delivery</span><span class="option-price format-price transfer">10.00</span>
                                                     </label>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                             <!-- Delivery Fee -->
                                             <!-- Total -->
                                             <div class="row total-container">
@@ -926,10 +926,7 @@ require_once __DIR__ . '/Config/Config.php';
                                 <!-- Form -->
                                 <form method="POST" id="orderForm" name="orderForm" onsubmit="return confirmGuestOrder(event);">
 
-                                    <!-- Step 1: Order Summary -->
-                                   
-                                    <!-- Step 1: Order Summary End -->
-
+                      
                                     <!-- Step 2: Checkout -->
                                     <div class="step">
                                         <div class="order-header">
@@ -963,6 +960,12 @@ require_once __DIR__ . '/Config/Config.php';
                                                         </div>
                                                     </div>
                                                 </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-12 mt-2">
+                                                    <span class="totalTitle">Coupon Discount</span><span class="totalValue format-price float-right">0.00</span>
+                                                    </div>
+                                                </div>
                                                 <div class="row total-container">
                                                     <div class="col-md-12 p-0">
                                                         <span class="totalTitle">Total</span><span class="totalValue format-price float-right">0.00</span>
@@ -971,10 +974,10 @@ require_once __DIR__ . '/Config/Config.php';
                                                 <div class="row">
                                                     <div class="col-6 pr-0">
                                                         <div class="form-group">
-                                                            <input type="checkbox" id="cbxOnlinePayment" class="inp-cbx" name="terms" value="yes" required />
+                                                            <input type="checkbox" id="cbxOnlinePayment" class="inp-cbx" name="terms" value="yes" required="" data-parsley-multiple="terms">
                                                             <label class="cbx terms" for="cbxOnlinePayment">
                                                                 <span>
-                                                                    <svg width="12px" height="10px" viewbox="0 0 12 10">
+                                                                    <svg width="12px" height="10px" viewBox="0 0 12 10">
                                                                         <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
                                                                     </svg>
                                                                 </span>

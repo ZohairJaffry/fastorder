@@ -351,7 +351,7 @@
   // Function to format item prices usign priceFormat plugin
   function formatPrice() {
     $(".format-price").priceFormat({
-      prefix: "$ ",
+      prefix: "AED",
       centsSeparator: ".",
       thousandsSeparator: ",",
     });
