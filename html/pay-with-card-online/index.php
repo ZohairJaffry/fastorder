@@ -17,7 +17,7 @@ require_once __DIR__ . '/Config/Config.php';
     <meta name="author" content="UWS">
     <title>Land Expedition</title>
     <!-- Favicon -->
-    <link href="../img/favicon.png" rel="shortcut icon">
+    <link href="./assets/images/favicon.png" rel="shortcut icon">
 
     <!-- Google Fonts - Jost -->
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -43,14 +43,32 @@ require_once __DIR__ . '/Config/Config.php';
 
 </head>
 <style>
-.checked {
-  color: orange;
-}
-.icon {
+    .checked {
+        color: orange;
+    }
+    .icon {
   display: inline-block;
   margin-right: 5px; /* Adjust this value to control the spacing between the icon and the text */
-}
+    }
+
 </style>
+<style>
+   .product-list-container {
+        overflow-y: scroll;
+        max-height: 450px; /* Set the desired height for the scrollbar container */
+    }
+    .product-list-container::-webkit-scrollbar {
+        width: 10px; /* Set the desired width of the scrollbar */
+    }
+
+    .product-list-container::-webkit-scrollbar-thumb {
+        background-color: #888; /* Set the color of the scrollbar thumb */
+    }
+
+    .product-list-container::-webkit-scrollbar-thumb:hover {
+        background-color: #555; /* Set the color of the scrollbar thumb on hover */
+    }
+</style>    
 <body>
 
     <!-- Preloader -->
@@ -77,7 +95,7 @@ require_once __DIR__ . '/Config/Config.php';
 
                      
                                     <div class="search-wrap">
-                                        <input id="search" type="text" class="form-control" placeholder="Search..." />
+                                        <input id="search" type="text" class="form-control" placeholder="Search by destination, activity or attraction" />
                                         <i class="icon icon-search"></i>
                                     </div>
                             
@@ -127,11 +145,11 @@ require_once __DIR__ . '/Config/Config.php';
                 <!-- Container -->
                 <div class="container">
                     <!-- Row -->
-                    <div class="row">
+                    <div class="row" style="padding:30px; margin-top:-1%">
                         <!-- Left Sidebar -->
-                        <div class="col-lg-5" id="mainContent">
+                        <div class="col-lg-4.5" id="mainContent" >
                             <!-- Filter Area -->
-                            <div class="order-header" style="width: 514px;height:60px; margin-top: 30px;">
+                            <div class="order-header" style="width: 475px;height:25px;">
                                 <ul style="display:flex">
                                           <li style="margin-left: 10%; ">  <h6 class="wizard-header text-white">
                                             Product Name</h6> </li>
@@ -139,24 +157,20 @@ require_once __DIR__ . '/Config/Config.php';
                                             <li  style="margin-left: 12%; ">  <h6 class="wizard-header text-white">
                                            ID</h6></li>
 
-                                           <li  style="margin-left: 15%; "> <h6 class="wizard-header text-white">
+                                           <li  style="margin-left: 12%; "> <h6 class="wizard-header text-white">
                                            Price</h6></li>
                                            <li  style="margin-left: 5%; "><h6 class="wizard-header text-white">
                                            Booked	</h6></li>
 
-                                           <li  style="margin-left: 5%; "><h6 class="wizard-header text-white">
+                                           <li  style="margin-left: 3%; "><h6 class="wizard-header text-white">
                                            Action</h6></li>
                                 </ul>
                             </div>
-                            <!-- Filter Area End -->
-                            <!-- Grid -->
-                            <div class="row grid" id="orderContainer">
-                          
-                                <!-- Grid Item 01 -->
-                               
+                         
+                            <div class="product-list-container grid" id="orderContainer">
                                 <!-- Grid Item 02 -->
                                 <div id="gridItem02" class="col-xl-12 col-lg-12 col-md-6 col-sm-6 isotope-item  pizza">
-                                    <div class="row mt-5">
+                                    <div class="row">
                                         <div class="col-2">
                                         <figure>
                                          
@@ -237,34 +251,34 @@ require_once __DIR__ . '/Config/Config.php';
                                 </div>
                                 <!-- Grid Item 04 -->
                                 <div id="gridItem04" class="col-xl-12 col-lg-12 col-md-12 col-sm-6 isotope-item  pizza">
-                                <div class="row">
-                                        <div class="col-2">
-                                        <figure>
+                                        <div class="row">
+                                            <div class="col-2">
+                                            <figure>
                                          
-                                            <img src="./assets/images/2.jpg" data-src="./assets/images/2.jpg" class="img-fluid lazy" alt="">
+                                            <img src="./assets/images/3.jpg" data-src="./assets/images/3.jpg" class="img-fluid lazy" alt="">
                                        
                                             <!-- <div class="ribbon-size"><span>Size: M</span></div> -->
-                                        </figure>
-                                        </div>
-                                        <div class="col-2">
-                                             <a href="#modalDetailsItem02" class="item-body-link modal-opener">
-                                                <div class="item-title">
-                                                    <h3 style="color:black">Dubai Aquarium</h3>
+                                            </figure>
+                                            </div>
+                                            <div class="col-2">
+                                                <a href="#modalDetailsItem02" class="item-body-link modal-opener">
+                                                    <div class="item-title">
+                                                     <h3 style="color:black">Dubai Tour</h3>
                                                     <!-- <small>Ragu, Mozzarella</small> -->
-                                                </div>
-                                            </a>
-                                        </div>   
-                                        <div class="col-2">  
-                                        <h3 style="color:black">002</h3>
-                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>   
+                                            <div class="col-2">  
+                                            <h3 style="color:black">003</h3>
+                                             </div>
                         
-                                        <div class="col-2">  
-                                        <h3 style="color:black"> AED 155.00</h3>
-                                        </div>
-                                        <div class="col-2">  
-                                        <h3 style="color:black">5</h3>
-                                        </div>
-                                        <ul class="col-2" style="display:flex">
+                                            <div class="col-2">  
+                                            <h3 style="color:black"> AED 300.00</h3>
+                                            </div>
+                                            <div class="col-2">  
+                                            <h3 style="color:black">5</h3>
+                                            </div>
+                                            <ul class="col-2" style="display:flex">
                                          
                                             <li>
                                             <a href="#modalDetailsItem02" class="item-body-link modal-opener"><i class="icon icon-eye"></i></a>
@@ -272,39 +286,39 @@ require_once __DIR__ . '/Config/Config.php';
                                             <li>
                                                 <a href="javascript:;" class="add-options-item-to-cart"><i class="icon icon-shopping-cart"></i></a>
                                             </li>
-                                        </ul>
-                                    </div>
+                                            </ul>
+                                        </div>
                                 </div>
                                 <!-- Grid Item 05 -->
-                                <div id="gridItem05" class="col-xl-12 col-lg-12 col-md-6 col-sm-6 isotope-item  pizza">
-                                    <div class="row">
-                                        <div class="col-2">
-                                        <figure>
+                                <div id="gridItem05" class="col-xl-12 col-lg-12 col-md-12 col-sm-6 isotope-item  pizza">
+                                        <div class="row">
+                                            <div class="col-2">
+                                            <figure>
                                          
-                                            <img src="./assets/images/2.jpg" data-src="./assets/images/2.jpg" class="img-fluid lazy" alt="">
+                                            <img src="./assets/images/4.jpg" data-src="./assets/images/4.jpg" class="img-fluid lazy" alt="">
                                        
                                             <!-- <div class="ribbon-size"><span>Size: M</span></div> -->
-                                        </figure>
-                                        </div>
-                                        <div class="col-2">
-                                             <a href="#modalDetailsItem05" class="item-body-link modal-opener">
-                                                <div class="item-title">
-                                                    <h3 style="color:black">Dubai Aquarium</h3>
+                                            </figure>
+                                            </div>
+                                            <div class="col-2">
+                                                <a href="#modalDetailsItem02" class="item-body-link modal-opener">
+                                                    <div class="item-title">
+                                                     <h3 style="color:black">Sky Dinner</h3>
                                                     <!-- <small>Ragu, Mozzarella</small> -->
-                                                </div>
-                                            </a>
-                                        </div>   
-                                        <div class="col-2">  
-                                        <h3 style="color:black">002</h3>
-                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>   
+                                            <div class="col-2">  
+                                            <h3 style="color:black">003</h3>
+                                             </div>
                         
-                                        <div class="col-2">  
-                                        <h3 style="color:black"> AED 155.00</h3>
-                                        </div>
-                                        <div class="col-2">  
-                                        <h3 style="color:black">5</h3>
-                                        </div>
-                                        <ul class="col-2" style="display:flex">
+                                            <div class="col-2">  
+                                            <h3 style="color:black"> AED 300.00</h3>
+                                            </div>
+                                            <div class="col-2">  
+                                            <h3 style="color:black">5</h3>
+                                            </div>
+                                            <ul class="col-2" style="display:flex">
                                          
                                             <li>
                                             <a href="#modalDetailsItem02" class="item-body-link modal-opener"><i class="icon icon-eye"></i></a>
@@ -312,8 +326,8 @@ require_once __DIR__ . '/Config/Config.php';
                                             <li>
                                                 <a href="javascript:;" class="add-options-item-to-cart"><i class="icon icon-shopping-cart"></i></a>
                                             </li>
-                                        </ul>
-                                    </div>
+                                            </ul>
+                                        </div>
                                 </div>
 
                                 <div id="gridItem06" class="col-xl-12 col-lg-12 col-md-12 col-sm-6 isotope-item  pizza">
@@ -321,7 +335,7 @@ require_once __DIR__ . '/Config/Config.php';
                                         <div class="col-2">
                                             <figure>
                                          
-                                            <img src="./assets/images/1.jpg" data-src="./assets/images/1.jpg" class="img-fluid lazy" alt="">
+                                            <img src="./assets/images/5.jpg" data-src="./assets/images/5.jpg" class="img-fluid lazy" alt="">
                                        
                                                 <!-- <div class="ribbon-size"><span>Size: M</span></div> -->
                                             </figure>
@@ -329,21 +343,21 @@ require_once __DIR__ . '/Config/Config.php';
                                         <div class="col-2">
                                              <a href="#modalDetailsItem06" class="item-body-link modal-opener">
                                                 <div class="item-title">
-                                                    <h3 style="color:black">Desert Safari
+                                                    <h3 style="color:black">Marina Dinner
                                                     </h3>
                                                     <!-- <small>Ragu, Mozzarella</small> -->
                                                 </div>
                                             </a>
                                         </div>   
                                         <div class="col-2">  
-                                             <h3 style="color:black">001</h3>
+                                             <h3 style="color:black">005</h3>
                                         </div>
                         
                                         <div class="col-2">  
-                                                 <h3 style="color:black"> AED 100.00</h3>
+                                                 <h3 style="color:black"> AED 250.00</h3>
                                         </div>
                                             <div class="col-2">  
-                                                 <h3 style="color:black">5</h3>
+                                                 <h3 style="color:black">2</h3>
                                             </div>
                                         <ul class="col-2" style="display:flex">
                                          
@@ -478,7 +492,7 @@ require_once __DIR__ . '/Config/Config.php';
                                     </div>
                                 </div>
 
-                                <div id="gridItem010" class="col-xl-12 col-lg-12 col-md-12 col-sm-6 isotope-item  pizza">
+                                <div id="gridItem10" class="col-xl-12 col-lg-12 col-md-12 col-sm-6 isotope-item  pizza">
                                     <div class="row">
                                         <div class="col-2">
                                             <figure>
@@ -519,7 +533,7 @@ require_once __DIR__ . '/Config/Config.php';
                                     </div>
                                 </div>
 
-                                <div id="gridItem02" class="col-xl-12 col-lg-12 col-md-6 col-sm-6 isotope-item  pizza">
+                                <div id="gridItem11" class="col-xl-12 col-lg-12 col-md-6 col-sm-6 isotope-item  pizza">
                                     <div class="row">
                                         <div class="col-2">
                                         <figure>
@@ -559,7 +573,7 @@ require_once __DIR__ . '/Config/Config.php';
                                     </div>
                                 </div>
 
-                                <div id="gridItem03" class="col-xl-12 col-lg-12 col-md-12 col-sm-6 isotope-item  pizza">
+                                <div id="gridItem12" class="col-xl-12 col-lg-12 col-md-12 col-sm-6 isotope-item  pizza">
                                     <div class="row">
                                         <div class="col-2">
                                             <figure>
@@ -759,15 +773,15 @@ require_once __DIR__ . '/Config/Config.php';
                         </div>
                         <!-- Left Sidebar End -->
                         <!-- Right Sidebar -->
-                        <div class="col-lg-3" id="sidebar">
+                        <div class="col-lg-4 " id="sidebar" >
                             <!-- Order Container -->
-                            <div id="orderContainer" class="theiaStickySidebar">
+                            <div id="orderContainer" class="product-list-container">
                                 <!-- Form -->
-                                <form method="POST" id="orderForm" name="orderForm" onsubmit="return confirmGuestOrder(event);">
+                                <form method="POST" id="orderForm" name="orderForm" onsubmit="return confirmGuestOrder(event);"style="margin-top:-3%">
 
                                     <!-- Step 1: Order Summary -->
                                     <div id="#orderSummaryStep" class="step">
-                                        <div class="order-header">
+                                        <div class="order-header mt-2">
                                             <h3>Cart</h3>
                                         </div>
                                         <div class="order-body">
@@ -920,7 +934,7 @@ require_once __DIR__ . '/Config/Config.php';
                             <!-- Order Container End -->
                         </div>
                         <!-- Right Sidebar End -->
-                        <div class="col-lg-4" id="sidebar">
+                        <div class="col-lg-3.5" id="sidebar">
                             <!-- Order Container -->
                             <div id="orderContainer" class="theiaStickySidebar">
                                 <!-- Form -->
@@ -934,6 +948,14 @@ require_once __DIR__ . '/Config/Config.php';
                                         </div>
                                         <div id="personalData" data-consumer-key='<?php echo Config::STRIPE_PUBLISHABLE_KEY; ?>' data-create-order-url='<?php echo Config::STRIPE_CREATE_ORDER_URL; ?>' data-return-url='<?php echo Config::THANKYOU_URL; ?>' data-currency='<?php echo Config::CURRENCY; ?>'>
                                             <div class="order-body">
+                                            <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label for="messageOnlinePayment">Enter Discount Code</label>
+                                                            <input id="messageOnlinePayment" class="form-control" name="message" type="text" data-parsley-pattern="^[a-zA-Z0-9\s.:,!?']+$" />
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                    
@@ -952,18 +974,11 @@ require_once __DIR__ . '/Config/Config.php';
                                                     </div>
                                                 </div>
                                               
-                                                <div class="row">
-                                                    <div class="col-md-12 mt-2">
-                                                        <div class="form-group">
-                                                            <label for="messageOnlinePayment">Enter Discount Code</label>
-                                                            <input id="messageOnlinePayment" class="form-control" name="message" type="text" data-parsley-pattern="^[a-zA-Z0-9\s.:,!?']+$" />
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                               
 
                                                 <div class="row">
                                                     <div class="col-md-12 mt-2">
-                                                    <span class="totalTitle">Coupon Discount</span><span class="totalValue format-price float-right">0.00</span>
+                                                    <span class="totalTitle">Discount</span><span class="totalValue format-price float-right">0.00</span>
                                                     </div>
                                                 </div>
                                                 <div class="row total-container">
@@ -971,7 +986,7 @@ require_once __DIR__ . '/Config/Config.php';
                                                         <span class="totalTitle">Total</span><span class="totalValue format-price float-right">0.00</span>
                                                     </div>
                                                 </div>
-                                                <div class="row">
+                                                <!-- <div class="row">
                                                     <div class="col-6 pr-0">
                                                         <div class="form-group">
                                                             <input type="checkbox" id="cbxOnlinePayment" class="inp-cbx" name="terms" value="yes" required="" data-parsley-multiple="terms">
@@ -988,7 +1003,7 @@ require_once __DIR__ . '/Config/Config.php';
                                                     <div class="col-6 pl-0">
                                                         <a href="javascript:;" class="modify-order backward">Modify Order</a>
                                                     </div>
-                                                </div>
+                                                </div> -->
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <button type="submit" name="submit" id="submitPayment" class="btn-form-func">
@@ -1008,11 +1023,7 @@ require_once __DIR__ . '/Config/Config.php';
                                                         </button>
                                                     </div>
                                                 </div> -->
-                                                <div class="row footer">
-                                                    <div class="col-md-12 text-center">
-                                                        <small>Copyrigth FoodBoard 2021.</small>
-                                                    </div>
-                                                </div>
+                                              
                                             </div>
                                         </div>
                                     </div>
@@ -1034,57 +1045,7 @@ require_once __DIR__ . '/Config/Config.php';
         <!-- Main End -->
 
         <!-- Footer -->
-        <footer class="main-footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3">
-                        <h5 class="footer-heading">Menu Links</h5>
-                        <ul class="list-unstyled nav-links">
-                            <li><i class="fa fa-angle-right"></i> <a href="https://ultimatewebsolutions.net/foodboard/" class="footer-link">Home</a></li>
-                            <li><i class="fa fa-angle-right"></i> <a href="../faq.html" class="footer-link">FAQ</a></li>
-                            <li><i class="fa fa-angle-right"></i> <a href="../contacts.html" class="footer-link">Contacts</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3">
-                        <h5 class="footer-heading">Order Wizard</h5>
-                        <ul class="list-unstyled nav-links">
-                            <li><i class="fa fa-angle-right"></i> <a href="../pay-with-card-online/" class="footer-link">Pay online</a></li>
-                            <li><i class="fa fa-angle-right"></i> <a href="../pay-with-cash-on-delivery/" class="footer-link">Pay with cash on delivery</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4">
-                        <h5 class="footer-heading">Contacts</h5>
-                        <ul class="list-unstyled contact-links">
-                            <li><i class="icon icon-map-marker"></i><a href="https://goo.gl/maps/vKgGyZe2JSRLDnYH6" class="footer-link" target="_blank">Address: 1234 Street Name, City Name, USA</a>
-                            </li>
-                            <li><i class="icon icon-envelope3"></i><a href="mailto:info@yourdomain.com" class="footer-link">Mail: info@yourdomain.com</a></li>
-                            <li><i class="icon icon-phone2"></i><a href="tel:+3630123456789" class="footer-link">Phone: +3630123456789</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-2">
-                        <h5 class="footer-heading">Find Us On</h5>
-                        <ul class="list-unstyled social-links">
-                            <li><a href="https://facebook.com" class="social-link" target="_blank"><i class="icon icon-facebook"></i></a></li>
-                            <li><a href="https://twitter.com" class="social-link" target="_blank"><i class="icon icon-twitter"></i></a></li>
-                            <li><a href="https://instagram.com" class="social-link" target="_blank"><i class="icon icon-instagram"></i></a></li>
-                            <li><a href="https://pinterest.com" class="social-link" target="_blank"><i class="icon icon-pinterest"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col-md-8">
-                        <ul id="subFooterLinks">
-                            <li><a href="https://themeforest.net/user/ultimatewebsolutions" target="_blank">With <i class="fa fa-heart pulse"></i> by UWS</a></li>
-                            <li><a href="../pdf/terms.pdf" target="_blank">Terms and conditions</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4">
-                        <div id="copy">© 2021 FoodBoard</div>
-                    </div>
-                </div>
-            </div>
-        </footer>
+    
         <!-- Footer End -->
 
         <!-- Notification Messages -->
@@ -1258,6 +1219,8 @@ require_once __DIR__ . '/Config/Config.php';
         </div>
         <!-- Footer End -->
     </div>
+
+   
     <!-- Modal Options for Item 02 End -->
 
     <!-- Modal Options for Item 03 -->
@@ -1518,10 +1481,10 @@ require_once __DIR__ . '/Config/Config.php';
                             <h2 class="post-title mt-1 mb-0">
                               Dubai Aquarium Tour
                               <span class="fa fa-star checked"></span>
-<span class="fa fa-star checked "></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked "></span>
-<span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked "></span>
+                                <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked "></span>
+                                <span class="fa fa-star checked"></span>
  
                             </h2>
                           </div>
@@ -1576,7 +1539,79 @@ require_once __DIR__ . '/Config/Config.php';
      
     </div>
     <!-- Modal Details for Item 02 End -->
+    <div id="editmodal" class="modal-popup zoom-anim-dialog mfp-hide">
+        <div class="small-dialog-header">
+            <h3>Dubai Aquarium Tour</h3>
+        </div>
+        <div class="content pb-1">
+            <figure><img src="./assets/images/2.jpg" alt="" class="img-fluid"></figure>
+ 
+        </div>
+        <article class="post">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="post-header">
+                            <!-- /.post-category -->
+                            <h2 class="post-title mt-1 mb-0">
+                              Dubai Aquarium Tour
+                              <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked "></span>
+                                <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked "></span>
+                                <span class="fa fa-star checked"></span>
+ 
+                            </h2>
+                          </div>
+                          <!-- /.post-header -->
+                          <div class="post-content">
+                            <h4>Overview</h4>
+                            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam quis risus eget urna mollis ornare vel. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh. Cras mattis consectetur purus.</p>
+                       
+                            <div class="row">
+                              <div class="col-sm-7">
+                                <ul>
+                                <li><span class="icon"><i class="fas fa-wifi">Free Wifi</li></i></span>
+                                  
+                                 
 
+                                  <li><span class="icon"><i class="fas fa-ac">Air Conditioning</li></i></span>
+                      
+
+                                  <li><span class="icon"><i class="fas fa-parking"> Parking Available</li></i></span>
+                                 
+
+                                  <li><span class="icon"><i class="fas fa-service">Business Service</li></i></span>
+                                 
+                                </ul>
+                              </div>
+                              <div class="col-sm-5">
+                                <div class="price-container">
+                                  <h5>From AED 125.00</h5>
+                                  <p>Land Expeditions Price Guarantee</p>
+                                  <a class="btn btn-sm btn-danger center-block" data-bs-toggle="modal" data-bs-target="#select-product" style="display: block;">Add</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <!-- /.post-content -->
+                        </div>
+                        <!--/.card-body -->
+                        
+                      </div>
+                      <!-- /.card -->
+                    </article>
+                  </div>
+                </div>
+                <!-- /column -->
+            
+
+                </div>
+            </div>
+        
+        </div>
+     
+    </div>
     <!-- Modal Details for Item 03 -->
     <div id="modalDetailsItem03" class="modal-popup zoom-anim-dialog mfp-hide">
         <div class="small-dialog-header">

@@ -351,7 +351,7 @@
   // Function to format item prices usign priceFormat plugin
   function formatPrice() {
     $(".format-price").priceFormat({
-      prefix: "AED",
+      prefix: "AED ",
       centsSeparator: ".",
       thousandsSeparator: ",",
     });
@@ -451,7 +451,7 @@
 
     // Fill the dedicated row
     $("#emptyCart").html(
-      '<div class="order-list-img"><img src="../img/bg/empty-cart-small.jpg" alt="Your cart is empty"/></div><div class="order-list-details"> <h4>Your cart is empty</a><br/><small>Start adding items</small></h4> <div class="order-list-price format-price">0.00</div></div>'
+      '<div class="order-list-details"> <h4>Your cart is empty</a><br/><small>Start adding items</small></h4> <div class="order-list-price format-price">0.00</div></div>'
     );
     formatPrice();
   }
@@ -520,15 +520,26 @@
       '<div class="order-list-details"><h4>' +
         itemTitle +
         "<br/> <small>" +
-        itemSubtitle +
+        "SIC - Dera Dubai - 31 May 2023" +
+        "<br/>" +
+        "Adults x2 - AED 500" +
+        "<br/>" +
+        "Children x3 - AED 250" +
+        "<br/>" +
+        "VAT - AED 25" +
         extraTitle +
         '</small> </h4> <div class="qty-buttons"> <input type="button" value="+" class="qtyplus" name="plus"> <input type="text" name="qty" value="1" class="qty form-control"> <input type="button" value="-" class="qtyminus" name="minus"> </div><div class="order-list-price format-price">' +
-        itemPrice.toFixed(2) +
-        '</div><div class="order-list-delete"><a href="javascript:;" id="deleteCartItem' +
+        (itemPrice * 2).toFixed(2) +
+        '</div><div class="order-list-actions" style="text-align: right;"><a href="#modalDetailsItem02" class="item-body-link modal-opener" id="editCartItem' +
         id +
         rowId +
-        '"><i class="icon icon-trash"></i></a></div></div>'
+        '"><i class="icon icon-edit"></i></a><a href="javascript:;" id="deleteCartItem' +
+        id +
+        rowId +
+        '"><i class="icon icon-trash"></i></a></div></div>  '
     );
+
+    // Add event listener to the modal-opener class
 
     // Handle if an added item will be deleted
     $("#deleteCartItem" + id + rowId).on("click", function () {
@@ -831,8 +842,6 @@
     itemTitle = $("#gridItem" + id + " .item-title h3").text();
     itemPrice = $("#gridItem" + id + " .item-price").text();
     itemPrice = itemPrice.match(/[0-9.]+/g) * 1; // Find digits, dot and convert to number
-
-    thumbnailPath = "../img/gallery/grid-items-small/" + id + ".jpg";
 
     // Check if item already exists in cart or not
     if ($("#cartItem" + id + rowId).length > 0) {

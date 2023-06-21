@@ -25,13 +25,15 @@
     transition: all 0.2s ease-in-out;
     color: #fff;
   }
-  .main-menu ul, .main-menu ul li {
+  .main-menu ul,
+  .main-menu ul li {
     position: relative;
     display: inline-block;
     margin: 0;
     padding: 0;
   }
-  .main-menu ul a, .main-menu ul li a {
+  .main-menu ul a,
+  .main-menu ul li a {
     position: relative;
     margin: 0;
     padding: 0;
@@ -49,19 +51,19 @@
     width: 0;
     position: absolute;
     pointer-events: none;
-    border-bottom-color: #f25c04;
+    border-bottom-color: brown;
     border-width: 7px;
     margin-left: -7px;
   }
   /*First level styles */
-  .main-menu>ul>li span>a {
+  .main-menu > ul > li span > a {
     color: #333;
     padding: 0 8px 17px 8px;
     font-size: 14px;
     font-size: 0.875rem;
     font-weight: 500;
   }
-  .main-menu>ul>li span:hover>a {
+  .main-menu > ul > li span:hover > a {
     color: #ff7b79;
   }
   /* Submenu */
@@ -105,7 +107,7 @@
     padding: 15px 10px;
     line-height: 1;
   }
-  .main-menu ul li:hover>ul {
+  .main-menu ul li:hover > ul {
     padding: 0;
     visibility: visible;
     -webkit-transform: translateY(0);
@@ -118,7 +120,7 @@
   .main-menu ul ul li:last-child a {
     border-bottom: none;
   }
-  .main-menu ul ul li:hover>a {
+  .main-menu ul ul li:hover > a {
     background-color: #f9f9f9;
     color: #ff7b79;
     padding-left: 15px;
@@ -132,18 +134,18 @@
 
 /* Submenu 3rd level */
 
-.main-menu ul ul li span>a {
+.main-menu ul ul li span > a {
   font-weight: normal !important;
 }
 
-.main-menu ul ul li span>a:hover {
+.main-menu ul ul li span > a:hover {
   background-color: #f9f9f9;
   color: #ff7b79;
   padding-left: 18px;
   opacity: 1;
 }
 
-.main-menu ul ul li span>a:after {
+.main-menu ul ul li span > a:after {
   font-family: "FontAwesome";
   font-weight: 400;
   content: "\f054";
@@ -165,7 +167,7 @@
   min-width: 190px;
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-  border-top: 2px solid #f25c04;
+  border-top: 2px solid brown;
 }
 
 .main-menu ul ul ul.third_level_left {
@@ -196,7 +198,9 @@
     display: block;
     z-index: 2;
   }
-  .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+  .hamburger-inner,
+  .hamburger-inner::before,
+  .hamburger-inner::after {
     background-color: #333 !important;
   }
   /* Active Hamburger Color - When mobile menu is opened */
@@ -220,7 +224,7 @@
   ul.mm-listview {
     line-height: 25px;
   }
-  /* Use this when using WHITE mobile menu */  
+  /* Use this when using WHITE mobile menu */
   ul.mm-listview li a {
     color: #333 !important;
     display: block;
