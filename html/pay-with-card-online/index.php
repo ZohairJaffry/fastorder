@@ -37,12 +37,16 @@ require_once __DIR__ . '/Config/Config.php';
     <link href="../vendor/mmenu/css/mmenu.min.css" rel="stylesheet">
     <link href="../vendor/magnific-popup/css/magnific-popup.css" rel="stylesheet">
     <link href="../vendor/float-labels/css/float-labels.min.css" rel="stylesheet">
+    
 
     <!-- Main CSS -->
     <link href="./../css/style.css" rel="stylesheet">
+  
 
 </head>
+
 <style>
+  
     .checked {
         color: orange;
     }
@@ -50,7 +54,113 @@ require_once __DIR__ . '/Config/Config.php';
   display: inline-block;
   margin-right: 5px; /* Adjust this value to control the spacing between the icon and the text */
     }
+    .order-list-details {
+  position: relative;
+}
 
+.order-list-actions {
+  position: absolute;
+  top: 20%;
+  right: -40%;
+}
+.order-list-price {
+    position: absolute;
+    right: -40%;
+    top: -1px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #555;
+    margin-top: 0;
+
+    
+}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: end;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+</style>
+<style>
+   .rborder {
+      border: 2px solid black !important;
+    }
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+label {
+  font-weight: bold;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #007bff;
+}
+icon-shape {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.icon-sm {
+    width: 2rem;
+    height: 2rem;
+    
+}
 </style>
 <style>
    .product-list-container {
@@ -95,7 +205,7 @@ require_once __DIR__ . '/Config/Config.php';
 
                      
                                     <div class="search-wrap">
-                                        <input id="search" type="text" class="form-control" placeholder="Search by destination, activity or attraction" />
+                                        <input id="search" type="text" class="form-control" placeholder="Search by destination, activity or attraction" style="height: 30px;"/>
                                         <i class="icon icon-search"></i>
                                     </div>
                             
@@ -108,7 +218,7 @@ require_once __DIR__ . '/Config/Config.php';
                             <li><a href="#"><i class="icon icon-shopping-cart2"></i></a></li>
                         </ul> -->
                         <!-- Menu -->
-                        <nav id="menu" class="main-menu">
+                        <nav id="menu" class="main-menu" style="margin-top:-2%">
                             <ul>
 
                                 <li>
@@ -145,16 +255,16 @@ require_once __DIR__ . '/Config/Config.php';
                 <!-- Container -->
                 <div class="container">
                     <!-- Row -->
-                    <div class="row" style="padding:30px; margin-top:-1%">
+                    <div class="row">
                         <!-- Left Sidebar -->
-                        <div class="col-lg-4.5" id="mainContent" >
+                        <div class="col-lg-5" id="mainContent" >
                             <!-- Filter Area -->
-                            <div class="order-header" style="width: 475px;height:25px;">
+                            <div class="order-header" style="width: 100%;height:25px;">
                                 <ul style="display:flex">
                                           <li style="margin-left: 10%; ">  <h6 class="wizard-header text-white">
                                             Product Name</h6> </li>
 
-                                            <li  style="margin-left: 12%; ">  <h6 class="wizard-header text-white">
+                                            <li  style="margin-left: 8%; ">  <h6 class="wizard-header text-white">
                                            ID</h6></li>
 
                                            <li  style="margin-left: 12%; "> <h6 class="wizard-header text-white">
@@ -162,7 +272,7 @@ require_once __DIR__ . '/Config/Config.php';
                                            <li  style="margin-left: 5%; "><h6 class="wizard-header text-white">
                                            Booked	</h6></li>
 
-                                           <li  style="margin-left: 3%; "><h6 class="wizard-header text-white">
+                                           <li  style="margin-left: 8%; "><h6 class="wizard-header text-white">
                                            Action</h6></li>
                                 </ul>
                             </div>
@@ -171,28 +281,36 @@ require_once __DIR__ . '/Config/Config.php';
                                 <!-- Grid Item 02 -->
                                 <div id="gridItem02" class="col-xl-12 col-lg-12 col-md-6 col-sm-6 isotope-item  pizza">
                                     <div class="row">
-                                        <div class="col-2">
-                                        <figure>
+                                        <div class="col-4">
+                                         <ul style="display:flex">
                                          
-                                            <img src="./assets/images/2.jpg" data-src="./assets/images/2.jpg" class="img-fluid lazy" alt="">
-                                       
-                                            <!-- <div class="ribbon-size"><span>Size: M</span></div> -->
-                                        </figure>
+                                        
+                                             <li>
+                                                <figure>
+                                                       <img src="./assets/images/2.jpg" data-src="./assets/images/2.jpg" class=" lazy" alt="" style="width: 50px; height: auto;">
+         
+                                                </figure>
+                                           
+                                             </li>
+                                             <li style="display: flex; align-items: center;">
+                                                <a href="#modalDetailsItem02" class="item-body-link modal-opener">
+                                                    <div class="item-title"">
+                                                     <h3 style="color:black;margin-top:-17%">Dubai Aquarium</h3>
+            
+                                                    </div>
+                                                 </a>
+                                            </li>
+                                         </ul>
+                                        
                                         </div>
-                                        <div class="col-2">
-                                             <a href="#modalDetailsItem02" class="item-body-link modal-opener">
-                                                <div class="item-title">
-                                                    <h3 style="color:black">Dubai Aquarium</h3>
-                                                    <!-- <small>Ragu, Mozzarella</small> -->
-                                                </div>
-                                            </a>
-                                        </div>   
+                                         
                                         <div class="col-2">  
                                         <h3 style="color:black">002</h3>
                                         </div>
                         
-                                        <div class="col-2">  
-                                        <h3 style="color:black"> AED 155.00</h3>
+                                        <div class="col-2"> 
+                                             
+                                        <h3 style="color:black;"> AED 155.00</h3>
                                         </div>
                                         <div class="col-2">  
                                         <h3 style="color:black">5</h3>
@@ -210,34 +328,42 @@ require_once __DIR__ . '/Config/Config.php';
                                 </div>
                                 <!-- Grid Item 03 -->
                                 <div id="gridItem03" class="col-xl-12 col-lg-12 col-md-12 col-sm-6 isotope-item  pizza">
-                                    <div class="row">
-                                        <div class="col-2">
-                                            <figure>
+                                <div class="row">
+                                        <div class="col-4">
+                                         <ul style="display:flex">
                                          
-                                            <img src="./assets/images/1.jpg" data-src="./assets/images/1.jpg" class="img-fluid lazy" alt="">
-                                       
-                                                <!-- <div class="ribbon-size"><span>Size: M</span></div> -->
-                                            </figure>
-                                        </div>
-                                        <div class="col-2">
-                                             <a href="#modalDetailsItem01" class="item-body-link modal-opener">
-                                                <div class="item-title">
-                                                    <h3 style="color:black">Desert Safari
+                                        
+                                             <li>
+                                                <figure>
+                                                       <img src="./assets/images/1.jpg" data-src="./assets/images/1.jpg" class=" lazy" alt="" style="width: 50px; height: auto;">
+         
+                                                </figure>
+                                           
+                                             </li>
+                                             <li style="display: flex; align-items: center;">
+                                                <a href="#modalDetailsItem01" class="item-body-link modal-opener">
+                                                    <div class="item-title"">
+                                                     <h3 style="color:black;margin-top:-17%">Desert Safari
                                                     </h3>
-                                                    <!-- <small>Ragu, Mozzarella</small> -->
-                                                </div>
-                                            </a>
-                                        </div>   
+            
+                                                    </div>
+                                                 </a>
+                                            </li>
+                                         </ul>
+                                        
+                                        </div>
+                                         
                                         <div class="col-2">  
-                                             <h3 style="color:black">001</h3>
+                                        <h3 style="color:black">002</h3>
                                         </div>
                         
-                                        <div class="col-2">  
-                                                 <h3 style="color:black"> AED 100.00</h3>
+                                        <div class="col-2"> 
+                                             
+                                        <h3 style="color:black;"> AED 100.00</h3>
                                         </div>
-                                            <div class="col-2">  
-                                                 <h3 style="color:black">5</h3>
-                                            </div>
+                                        <div class="col-2">  
+                                        <h3 style="color:black">5</h3>
+                                        </div>
                                         <ul class="col-2" style="display:flex">
                                          
                                             <li>
@@ -251,114 +377,41 @@ require_once __DIR__ . '/Config/Config.php';
                                 </div>
                                 <!-- Grid Item 04 -->
                                 <div id="gridItem04" class="col-xl-12 col-lg-12 col-md-12 col-sm-6 isotope-item  pizza">
-                                        <div class="row">
-                                            <div class="col-2">
-                                            <figure>
+                                <div class="row">
+                                        <div class="col-4">
+                                         <ul style="display:flex">
                                          
-                                            <img src="./assets/images/3.jpg" data-src="./assets/images/3.jpg" class="img-fluid lazy" alt="">
-                                       
-                                            <!-- <div class="ribbon-size"><span>Size: M</span></div> -->
-                                            </figure>
-                                            </div>
-                                            <div class="col-2">
-                                                <a href="#modalDetailsItem02" class="item-body-link modal-opener">
-                                                    <div class="item-title">
-                                                     <h3 style="color:black">Dubai Tour</h3>
-                                                    <!-- <small>Ragu, Mozzarella</small> -->
+                                        
+                                             <li>
+                                                <figure>
+                                                       <img src="./assets/images/3.jpg" data-src="./assets/images/3.jpg" class=" lazy" alt="" style="width: 50px; height: auto;">
+         
+                                                </figure>
+                                           
+                                             </li>
+                                             <li style="display: flex; align-items: center;">
+                                                <a href="#modalDetailsItem01" class="item-body-link modal-opener">
+                                                    <div class="item-title"">
+                                                     <h3 style="color:black;margin-top:-17%">Dubai Tour</h3>
+            
                                                     </div>
-                                                </a>
-                                            </div>   
-                                            <div class="col-2">  
-                                            <h3 style="color:black">003</h3>
-                                             </div>
-                        
-                                            <div class="col-2">  
-                                            <h3 style="color:black"> AED 300.00</h3>
-                                            </div>
-                                            <div class="col-2">  
-                                            <h3 style="color:black">5</h3>
-                                            </div>
-                                            <ul class="col-2" style="display:flex">
-                                         
-                                            <li>
-                                            <a href="#modalDetailsItem02" class="item-body-link modal-opener"><i class="icon icon-eye"></i></a>
+                                                 </a>
                                             </li>
-                                            <li>
-                                                <a href="javascript:;" class="add-options-item-to-cart"><i class="icon icon-shopping-cart"></i></a>
-                                            </li>
-                                            </ul>
+                                         </ul>
+                                        
                                         </div>
-                                </div>
-                                <!-- Grid Item 05 -->
-                                <div id="gridItem05" class="col-xl-12 col-lg-12 col-md-12 col-sm-6 isotope-item  pizza">
-                                        <div class="row">
-                                            <div class="col-2">
-                                            <figure>
                                          
-                                            <img src="./assets/images/4.jpg" data-src="./assets/images/4.jpg" class="img-fluid lazy" alt="">
-                                       
-                                            <!-- <div class="ribbon-size"><span>Size: M</span></div> -->
-                                            </figure>
-                                            </div>
-                                            <div class="col-2">
-                                                <a href="#modalDetailsItem02" class="item-body-link modal-opener">
-                                                    <div class="item-title">
-                                                     <h3 style="color:black">Sky Dinner</h3>
-                                                    <!-- <small>Ragu, Mozzarella</small> -->
-                                                    </div>
-                                                </a>
-                                            </div>   
-                                            <div class="col-2">  
-                                            <h3 style="color:black">003</h3>
-                                             </div>
-                        
-                                            <div class="col-2">  
-                                            <h3 style="color:black"> AED 300.00</h3>
-                                            </div>
-                                            <div class="col-2">  
-                                            <h3 style="color:black">5</h3>
-                                            </div>
-                                            <ul class="col-2" style="display:flex">
-                                         
-                                            <li>
-                                            <a href="#modalDetailsItem02" class="item-body-link modal-opener"><i class="icon icon-eye"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;" class="add-options-item-to-cart"><i class="icon icon-shopping-cart"></i></a>
-                                            </li>
-                                            </ul>
-                                        </div>
-                                </div>
-
-                                <div id="gridItem06" class="col-xl-12 col-lg-12 col-md-12 col-sm-6 isotope-item  pizza">
-                                    <div class="row">
-                                        <div class="col-2">
-                                            <figure>
-                                         
-                                            <img src="./assets/images/5.jpg" data-src="./assets/images/5.jpg" class="img-fluid lazy" alt="">
-                                       
-                                                <!-- <div class="ribbon-size"><span>Size: M</span></div> -->
-                                            </figure>
-                                        </div>
-                                        <div class="col-2">
-                                             <a href="#modalDetailsItem06" class="item-body-link modal-opener">
-                                                <div class="item-title">
-                                                    <h3 style="color:black">Marina Dinner
-                                                    </h3>
-                                                    <!-- <small>Ragu, Mozzarella</small> -->
-                                                </div>
-                                            </a>
-                                        </div>   
                                         <div class="col-2">  
-                                             <h3 style="color:black">005</h3>
+                                        <h3 style="color:black">002</h3>
                                         </div>
                         
-                                        <div class="col-2">  
-                                                 <h3 style="color:black"> AED 250.00</h3>
+                                        <div class="col-2"> 
+                                             
+                                        <h3 style="color:black;"> AED 500.00</h3>
                                         </div>
-                                            <div class="col-2">  
-                                                 <h3 style="color:black">2</h3>
-                                            </div>
+                                        <div class="col-2">  
+                                        <h3 style="color:black">5</h3>
+                                        </div>
                                         <ul class="col-2" style="display:flex">
                                          
                                             <li>
@@ -366,6 +419,103 @@ require_once __DIR__ . '/Config/Config.php';
                                             </li>
                                             <li>
                                                 <a href="javascript:;" class="add-options-item-to-cart"><i class="icon icon-shopping-cart"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                   
+                                <div id="gridItem05" class="col-xl-12 col-lg-12 col-md-6 col-sm-6 isotope-item  pizza">
+                                    <div class="row">
+                                        <div class="col-4">
+                                         <ul style="display:flex">
+                                         
+                                        
+                                             <li>
+                                                <figure>
+                                                       <img src="./assets/images/4.jpg" data-src="./assets/images/4.jpg" class=" lazy" alt="" style="width: 50px; height: auto;">
+         
+                                                </figure>
+                                           
+                                             </li>
+                                             <li style="display: flex; align-items: center;">
+                                                <a href="#modalDetailsItem02" class="item-body-link modal-opener">
+                                                    <div class="item-title"">
+                                                     <h3 style="color:black;margin-top:-17%">Lunch in Air</h3>
+            
+                                                    </div>
+                                                 </a>
+                                            </li>
+                                         </ul>
+                                        
+                                        </div>
+                                         
+                                        <div class="col-2">  
+                                        <h3 style="color:black">006</h3>
+                                        </div>
+                        
+                                        <div class="col-2"> 
+                                             
+                                        <h3 style="color:black;"> AED 255.00</h3>
+                                        </div>
+                                        <div class="col-2">  
+                                        <h3 style="color:black">5</h3>
+                                        </div>
+                                        <ul class="col-2" style="display:flex">
+                                         
+                                            <li>
+                                            <a href="#modalDetailsItem02" class="item-body-link modal-opener"><i class="icon icon-eye"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;" class="add-item-to-cart"><i class="icon icon-shopping-cart"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                               
+                             
+                                <div id="gridItem06" class="col-xl-12 col-lg-12 col-md-6 col-sm-6 isotope-item  pizza">
+                                    <div class="row">
+                                        <div class="col-4">
+                                         <ul style="display:flex">
+                                         
+                                        
+                                             <li>
+                                                <figure>
+                                                       <img src="./assets/images/5.jpg" data-src="./assets/images/5.jpg" class=" lazy" alt="" style="width: 50px; height: auto;">
+         
+                                                </figure>
+                                           
+                                             </li>
+                                             <li style="display: flex; align-items: center;">
+                                                <a href="#modalDetailsItem02" class="item-body-link modal-opener">
+                                                    <div class="item-title"">
+                                                     <h3 style="color:black;margin-top:-17%">Marina Dinner</h3>
+            
+                                                    </div>
+                                                 </a>
+                                            </li>
+                                         </ul>
+                                        
+                                        </div>
+                                         
+                                        <div class="col-2">  
+                                        <h3 style="color:black">007</h3>
+                                        </div>
+                        
+                                        <div class="col-2"> 
+                                             
+                                        <h3 style="color:black;"> AED 300.00</h3>
+                                        </div>
+                                        <div class="col-2">  
+                                        <h3 style="color:black">5</h3>
+                                        </div>
+                                        <ul class="col-2" style="display:flex">
+                                         
+                                            <li>
+                                            <a href="#modalDetailsItem02" class="item-body-link modal-opener"><i class="icon icon-eye"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;" class="add-item-to-cart"><i class="icon icon-shopping-cart"></i></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -373,28 +523,37 @@ require_once __DIR__ . '/Config/Config.php';
 
                                 <div id="gridItem07" class="col-xl-12 col-lg-12 col-md-6 col-sm-6 isotope-item  pizza">
                                     <div class="row">
-                                        <div class="col-2">
-                                        <figure>
+                                        <div class="col-4">
+                                         <ul style="display:flex">
                                          
-                                            <img src="./assets/images/2.jpg" data-src="./assets/images/2.jpg" class="img-fluid lazy" alt="">
-                                       
-                                            <!-- <div class="ribbon-size"><span>Size: M</span></div> -->
-                                        </figure>
+                                        
+                                             <li>
+                                                <figure>
+                                                       <img src="./assets/images/2.jpg" data-src="./assets/images/2.jpg" class=" lazy" alt="" style="width: 50px; height: auto;">
+         
+                                                </figure>
+                                           
+                                             </li>
+                                             <li style="display: flex; align-items: center;">
+                                                <a href="#modalDetailsItem02" class="item-body-link modal-opener">
+                                                    <div class="item-title"">
+                                                     <h3 style="color:black;margin-top:-17%">Dubai Aquarium
+                                                    </h3>
+            
+                                                    </div>
+                                                 </a>
+                                            </li>
+                                         </ul>
+                                        
                                         </div>
-                                        <div class="col-2">
-                                             <a href="#modalDetailsItem07" class="item-body-link modal-opener">
-                                                <div class="item-title">
-                                                    <h3 style="color:black">Dubai Aquarium</h3>
-                                                    <!-- <small>Ragu, Mozzarella</small> -->
-                                                </div>
-                                            </a>
-                                        </div>   
+                                         
                                         <div class="col-2">  
-                                        <h3 style="color:black">002</h3>
+                                        <h3 style="color:black">008</h3>
                                         </div>
                         
-                                        <div class="col-2">  
-                                        <h3 style="color:black"> AED 155.00</h3>
+                                        <div class="col-2"> 
+                                             
+                                        <h3 style="color:black;"> AED 250.00</h3>
                                         </div>
                                         <div class="col-2">  
                                         <h3 style="color:black">5</h3>
@@ -405,77 +564,96 @@ require_once __DIR__ . '/Config/Config.php';
                                             <a href="#modalDetailsItem02" class="item-body-link modal-opener"><i class="icon icon-eye"></i></a>
                                             </li>
                                             <li>
-                                                <a href="javascript:;" class="add-options-item-to-cart"><i class="icon icon-shopping-cart"></i></a>
+                                                <a href="javascript:;" class="add-item-to-cart"><i class="icon icon-shopping-cart"></i></a>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
 
-                                <div id="gridItem08" class="col-xl-12 col-lg-12 col-md-12 col-sm-6 isotope-item  pizza">
+
+                                <div id="gridItem08" class="col-xl-12 col-lg-12 col-md-6 col-sm-6 isotope-item  pizza">
                                     <div class="row">
-                                        <div class="col-2">
-                                            <figure>
+                                        <div class="col-4">
+                                         <ul style="display:flex">
                                          
-                                            <img src="./assets/images/1.jpg" data-src="./assets/images/1.jpg" class="img-fluid lazy" alt="">
-                                       
-                                                <!-- <div class="ribbon-size"><span>Size: M</span></div> -->
-                                            </figure>
-                                        </div>
-                                        <div class="col-2">
-                                             <a href="#modalDetailsItem08" class="item-body-link modal-opener">
-                                                <div class="item-title">
-                                                    <h3 style="color:black">Desert Safari
+                                        
+                                             <li>
+                                                <figure>
+                                                       <img src="./assets/images/1.jpg" data-src="./assets/images/1.jpg" class=" lazy" alt="" style="width: 50px; height: auto;">
+         
+                                                </figure>
+                                           
+                                             </li>
+                                             <li style="display: flex; align-items: center;">
+                                                <a href="#modalDetailsItem02" class="item-body-link modal-opener">
+                                                    <div class="item-title"">
+                                                     <h3 style="color:black;margin-top:-17%">Desert Safari
                                                     </h3>
-                                                    <!-- <small>Ragu, Mozzarella</small> -->
-                                                </div>
-                                            </a>
-                                        </div>   
+            
+                                                    </div>
+                                                 </a>
+                                            </li>
+                                         </ul>
+                                        
+                                        </div>
+                                         
                                         <div class="col-2">  
-                                             <h3 style="color:black">001</h3>
+                                        <h3 style="color:black">008</h3>
                                         </div>
                         
-                                        <div class="col-2">  
-                                                 <h3 style="color:black"> AED 100.00</h3>
+                                        <div class="col-2"> 
+                                             
+                                        <h3 style="color:black;"> AED 250.00</h3>
                                         </div>
-                                            <div class="col-2">  
-                                                 <h3 style="color:black">5</h3>
-                                            </div>
+                                        <div class="col-2">  
+                                        <h3 style="color:black">5</h3>
+                                        </div>
                                         <ul class="col-2" style="display:flex">
                                          
                                             <li>
-                                            <a href="#modalDetailsItem01" class="item-body-link modal-opener"><i class="icon icon-eye"></i></a>
+                                            <a href="#modalDetailsItem02" class="item-body-link modal-opener"><i class="icon icon-eye"></i></a>
                                             </li>
                                             <li>
-                                                <a href="javascript:;" class="add-options-item-to-cart"><i class="icon icon-shopping-cart"></i></a>
+                                                <a href="javascript:;" class="add-item-to-cart"><i class="icon icon-shopping-cart"></i></a>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
+
 
                                 <div id="gridItem09" class="col-xl-12 col-lg-12 col-md-6 col-sm-6 isotope-item  pizza">
                                     <div class="row">
-                                        <div class="col-2">
-                                        <figure>
+                                        <div class="col-4">
+                                         <ul style="display:flex">
                                          
-                                            <img src="./assets/images/2.jpg" data-src="./assets/images/2.jpg" class="img-fluid lazy" alt="">
-                                       
-                                            <!-- <div class="ribbon-size"><span>Size: M</span></div> -->
-                                        </figure>
+                                        
+                                             <li>
+                                                <figure>
+                                                       <img src="./assets/images/3.jpg" data-src="./assets/images/3.jpg" class=" lazy" alt="" style="width: 50px; height: auto;">
+         
+                                                </figure>
+                                           
+                                             </li>
+                                             <li style="display: flex; align-items: center;">
+                                                <a href="#modalDetailsItem02" class="item-body-link modal-opener">
+                                                    <div class="item-title"">
+                                                     <h3 style="color:black;margin-top:-17%">Dubai Tour
+                                                    </h3>
+            
+                                                    </div>
+                                                 </a>
+                                            </li>
+                                         </ul>
+                                        
                                         </div>
-                                        <div class="col-2">
-                                             <a href="#modalDetailsItem09" class="item-body-link modal-opener">
-                                                <div class="item-title">
-                                                    <h3 style="color:black">Dubai Aquarium</h3>
-                                                    <!-- <small>Ragu, Mozzarella</small> -->
-                                                </div>
-                                            </a>
-                                        </div>   
+                                         
                                         <div class="col-2">  
-                                        <h3 style="color:black">002</h3>
+                                        <h3 style="color:black">009</h3>
                                         </div>
                         
-                                        <div class="col-2">  
-                                        <h3 style="color:black"> AED 155.00</h3>
+                                        <div class="col-2"> 
+                                             
+                                        <h3 style="color:black;"> AED 500.00</h3>
                                         </div>
                                         <div class="col-2">  
                                         <h3 style="color:black">5</h3>
@@ -486,77 +664,46 @@ require_once __DIR__ . '/Config/Config.php';
                                             <a href="#modalDetailsItem02" class="item-body-link modal-opener"><i class="icon icon-eye"></i></a>
                                             </li>
                                             <li>
-                                                <a href="javascript:;" class="add-options-item-to-cart"><i class="icon icon-shopping-cart"></i></a>
+                                                <a href="javascript:;" class="add-item-to-cart"><i class="icon icon-shopping-cart"></i></a>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
+                             
 
-                                <div id="gridItem10" class="col-xl-12 col-lg-12 col-md-12 col-sm-6 isotope-item  pizza">
+                                <div id="gridItem010" class="col-xl-12 col-lg-12 col-md-6 col-sm-6 isotope-item  pizza">
                                     <div class="row">
-                                        <div class="col-2">
-                                            <figure>
+                                        <div class="col-4">
+                                         <ul style="display:flex">
                                          
-                                            <img src="./assets/images/1.jpg" data-src="./assets/images/1.jpg" class="img-fluid lazy" alt="">
-                                       
-                                                <!-- <div class="ribbon-size"><span>Size: M</span></div> -->
-                                            </figure>
-                                        </div>
-                                        <div class="col-2">
-                                             <a href="#modalDetailsItem010" class="item-body-link modal-opener">
-                                                <div class="item-title">
-                                                    <h3 style="color:black">Desert Safari
+                                        
+                                             <li>
+                                                <figure>
+                                                       <img src="./assets/images/4.jpg" data-src="./assets/images/4.jpg" class=" lazy" alt="" style="width: 50px; height: auto;">
+         
+                                                </figure>
+                                           
+                                             </li>
+                                             <li style="display: flex; align-items: center;">
+                                                <a href="#modalDetailsItem02" class="item-body-link modal-opener">
+                                                    <div class="item-title"">
+                                                     <h3 style="color:black;margin-top:-17%">Lunch in Air
                                                     </h3>
-                                                    <!-- <small>Ragu, Mozzarella</small> -->
-                                                </div>
-                                            </a>
-                                        </div>   
+            
+                                                    </div>
+                                                 </a>
+                                            </li>
+                                         </ul>
+                                        
+                                        </div>
+                                         
                                         <div class="col-2">  
-                                             <h3 style="color:black">001</h3>
+                                        <h3 style="color:black">010</h3>
                                         </div>
                         
-                                        <div class="col-2">  
-                                                 <h3 style="color:black"> AED 100.00</h3>
-                                        </div>
-                                            <div class="col-2">  
-                                                 <h3 style="color:black">5</h3>
-                                            </div>
-                                        <ul class="col-2" style="display:flex">
-                                         
-                                            <li>
-                                            <a href="#modalDetailsItem01" class="item-body-link modal-opener"><i class="icon icon-eye"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;" class="add-options-item-to-cart"><i class="icon icon-shopping-cart"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div id="gridItem11" class="col-xl-12 col-lg-12 col-md-6 col-sm-6 isotope-item  pizza">
-                                    <div class="row">
-                                        <div class="col-2">
-                                        <figure>
-                                         
-                                            <img src="./assets/images/2.jpg" data-src="./assets/images/2.jpg" class="img-fluid lazy" alt="">
-                                       
-                                            <!-- <div class="ribbon-size"><span>Size: M</span></div> -->
-                                        </figure>
-                                        </div>
-                                        <div class="col-2">
-                                             <a href="#modalDetailsItem02" class="item-body-link modal-opener">
-                                                <div class="item-title">
-                                                    <h3 style="color:black">Dubai Aquarium</h3>
-                                                    <!-- <small>Ragu, Mozzarella</small> -->
-                                                </div>
-                                            </a>
-                                        </div>   
-                                        <div class="col-2">  
-                                        <h3 style="color:black">002</h3>
-                                        </div>
-                        
-                                        <div class="col-2">  
-                                        <h3 style="color:black"> AED 155.00</h3>
+                                        <div class="col-2"> 
+                                             
+                                        <h3 style="color:black;"> AED 255.00</h3>
                                         </div>
                                         <div class="col-2">  
                                         <h3 style="color:black">5</h3>
@@ -567,96 +714,60 @@ require_once __DIR__ . '/Config/Config.php';
                                             <a href="#modalDetailsItem02" class="item-body-link modal-opener"><i class="icon icon-eye"></i></a>
                                             </li>
                                             <li>
-                                                <a href="javascript:;" class="add-options-item-to-cart"><i class="icon icon-shopping-cart"></i></a>
+                                                <a href="javascript:;" class="add-item-to-cart"><i class="icon icon-shopping-cart"></i></a>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
 
-                                <div id="gridItem12" class="col-xl-12 col-lg-12 col-md-12 col-sm-6 isotope-item  pizza">
+                                <div id="gridItem011" class="col-xl-12 col-lg-12 col-md-6 col-sm-6 isotope-item  pizza">
                                     <div class="row">
-                                        <div class="col-2">
-                                            <figure>
+                                        <div class="col-4">
+                                         <ul style="display:flex">
                                          
-                                            <img src="./assets/images/1.jpg" data-src="./assets/images/1.jpg" class="img-fluid lazy" alt="">
-                                       
-                                                <!-- <div class="ribbon-size"><span>Size: M</span></div> -->
-                                            </figure>
-                                        </div>
-                                        <div class="col-2">
-                                             <a href="#modalDetailsItem01" class="item-body-link modal-opener">
-                                                <div class="item-title">
-                                                    <h3 style="color:black">Desert Safari
+                                        
+                                             <li>
+                                                <figure>
+                                                       <img src="./assets/images/5.jpg" data-src="./assets/images/5.jpg" class=" lazy" alt="" style="width: 50px; height: auto;">
+         
+                                                </figure>
+                                           
+                                             </li>
+                                             <li style="display: flex; align-items: center;">
+                                                <a href="#modalDetailsItem02" class="item-body-link modal-opener">
+                                                    <div class="item-title"">
+                                                        <h3 style="color:black;margin-top:-17%">Marina Dinner
                                                     </h3>
-                                                    <!-- <small>Ragu, Mozzarella</small> -->
-                                                </div>
-                                            </a>
-                                        </div>   
+            
+                                                    </div>
+                                                 </a>
+                                            </li>
+                                         </ul>
+                                        
+                                        </div>
+                                         
                                         <div class="col-2">  
-                                             <h3 style="color:black">001</h3>
+                                        <h3 style="color:black">011</h3>
                                         </div>
                         
-                                        <div class="col-2">  
-                                                 <h3 style="color:black"> AED 100.00</h3>
+                                        <div class="col-2"> 
+                                             
+                                        <h3 style="color:black;"> AED 300.00</h3>
                                         </div>
-                                            <div class="col-2">  
-                                                 <h3 style="color:black">5</h3>
-                                            </div>
+                                        <div class="col-2">  
+                                        <h3 style="color:black">5</h3>
+                                        </div>
                                         <ul class="col-2" style="display:flex">
                                          
                                             <li>
-                                            <a href="#modalDetailsItem01" class="item-body-link modal-opener"><i class="icon icon-eye"></i></a>
+                                            <a href="#modalDetailsItem02" class="item-body-link modal-opener"><i class="icon icon-eye"></i></a>
                                             </li>
                                             <li>
-                                                <a href="javascript:;" class="add-options-item-to-cart"><i class="icon icon-shopping-cart"></i></a>
+                                                <a href="javascript:;" class="add-item-to-cart"><i class="icon icon-shopping-cart"></i></a>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
-                                <!-- Grid Item 06 -->
-                                <!-- <div id="gridItem06" class="col-xl-6 col-lg-6 col-md-6 col-sm-6 isotope-item  vegetarian">
-                                    <div class="item-body">
-                                        <figure>
-                                            <img src="../img/bg/lazy-placeholder.jpg" data-src="../img/gallery/grid-items/06.jpg" class="img-fluid lazy" alt="">
-                                            <a href="#modalDetailsItem06" class="item-body-link modal-opener">
-                                                <div class="item-title">
-                                                    <h3>Greek Salad</h3>
-                                                    <small>Tomato, Onion, Olives ... </small>
-                                                </div>
-                                            </a>
-                                        </figure>
-                                        <ul>
-                                            <li>
-                                                <span class="item-price format-price">5.00</span>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;" class="add-item-to-cart"><i class="icon icon-shopping-cart"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div> -->
-                                <!-- Grid Item 07 -->
-                                <!-- <div id="gridItem07" class="col-xl-6 col-lg-6 col-md-6 col-sm-6 isotope-item  vegetarian">
-                                    <div class="item-body">
-                                        <figure>
-                                            <img src="../img/bg/lazy-placeholder.jpg" data-src="../img/gallery/grid-items/07.jpg" class="img-fluid lazy" alt="">
-                                            <a href="#modalDetailsItem07" class="item-body-link modal-opener">
-                                                <div class="item-title">
-                                                    <h3>Grilled Salmon</h3>
-                                                    <small>With lime and pasta ...</small>
-                                                </div>
-                                            </a>
-                                        </figure>
-                                        <ul>
-                                            <li>
-                                                <span class="item-price format-price">9.00</span>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;" class="add-item-to-cart"><i class="icon icon-shopping-cart"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div> -->
                                 <!-- Grid Item 08 -->
                                 <!-- <div id="gridItem08" class="col-xl-6 col-lg-6 col-md-6 col-sm-6 isotope-item  vegetarian">
                                     <div class="item-body">
@@ -773,18 +884,18 @@ require_once __DIR__ . '/Config/Config.php';
                         </div>
                         <!-- Left Sidebar End -->
                         <!-- Right Sidebar -->
-                        <div class="col-lg-4 " id="sidebar" >
+                        <div class="col-lg-4 ">
                             <!-- Order Container -->
                             <div id="orderContainer" class="product-list-container">
                                 <!-- Form -->
                                 <form method="POST" id="orderForm" name="orderForm" onsubmit="return confirmGuestOrder(event);"style="margin-top:-3%">
 
                                     <!-- Step 1: Order Summary -->
-                                    <div id="#orderSummaryStep" class="step">
+                                    <div id="#orderSummaryStep" class="step" >
                                         <div class="order-header mt-2">
                                             <h3>Cart</h3>
                                         </div>
-                                        <div class="order-body">
+                                        <div class="order-body" id="sidebar" >
                                             <!-- Cart Items -->
                                             <div class="row">
                                                 <div class="col-md-12">
@@ -934,7 +1045,7 @@ require_once __DIR__ . '/Config/Config.php';
                             <!-- Order Container End -->
                         </div>
                         <!-- Right Sidebar End -->
-                        <div class="col-lg-3.5" id="sidebar">
+                        <div class="col-lg-3" id="sidebar">
                             <!-- Order Container -->
                             <div id="orderContainer" class="theiaStickySidebar">
                                 <!-- Form -->
@@ -942,12 +1053,12 @@ require_once __DIR__ . '/Config/Config.php';
 
                       
                                     <!-- Step 2: Checkout -->
-                                    <div class="step">
+                                    <div class="step" style="margin-top:-10%;">
                                         <div class="order-header">
                                             <h3>Checkout</h3>
                                         </div>
                                         <div id="personalData" data-consumer-key='<?php echo Config::STRIPE_PUBLISHABLE_KEY; ?>' data-create-order-url='<?php echo Config::STRIPE_CREATE_ORDER_URL; ?>' data-return-url='<?php echo Config::THANKYOU_URL; ?>' data-currency='<?php echo Config::CURRENCY; ?>'>
-                                            <div class="order-body">
+                                            <div class="order-body"style=" height:454.938px;">
                                             <div class="row">
                                                     <div class="col-md-12">
                                                         <div class="form-group">
@@ -978,7 +1089,7 @@ require_once __DIR__ . '/Config/Config.php';
 
                                                 <div class="row">
                                                     <div class="col-md-12 mt-2">
-                                                    <span class="totalTitle">Discount</span><span class="totalValue format-price float-right">0.00</span>
+                                                    <span class="totalTitle">Total Discount</span><span class="totalValue format-price float-right">0.00</span>
                                                     </div>
                                                 </div>
                                                 <div class="row total-container">
@@ -1289,7 +1400,7 @@ require_once __DIR__ . '/Config/Config.php';
     <!-- Modal Options for Item 03 End -->
 
     <!-- Modal Options for Item 04 -->
-    <div id="modalOptionsItem04" class="modal-popup zoom-anim-dialog mfp-hide">
+    <div id="modalOptionsItem04" class="modal-popup zoom-anim-dialog mfp-hide" style="width:700px">
         <div class="small-dialog-header">
             <h3>Fitness</h3>
             <div class="addedToCartMsgInModal">Added to cart</div>
@@ -1354,14 +1465,17 @@ require_once __DIR__ . '/Config/Config.php';
     <!-- Modal Options for Item 04 End -->
 
     <!-- Modal Details for Item 01 -->
-    <div id="modalDetailsItem01" class="modal-popup zoom-anim-dialog mfp-hide">
+    <div id="modalDetailsItem01" class="modal-popup zoom-anim-dialog mfp-hide" style="width:700px">
    
-           
-            <div class="container-fluid">
-              <div class="featured_image">
-                <img src="./assets/images/1.jpg"  style="width:100%
-                ">
-              </div>
+    
+    <div class="small-dialog-header">
+            <h3>Dubai Aquarium Tour</h3>
+        </div>
+        <div class="pb-1">
+            <figure><img src="./assets/images/1.jpg" alt="" class="img-fluid" style="    width: 1000px;
+                 height: 300px;"></figure>
+ 
+        </div>
 
               <div class="row gx-lg-8 gx-xl-12" style="text-align: left;">
                 <div class="col-lg-8">
@@ -1371,7 +1485,7 @@ require_once __DIR__ . '/Config/Config.php';
                         <div class="card-body">
                           <div class="post-header">
                             <!-- /.post-category -->
-                            <h2 class="post-title mt-1 mb-0">
+                            <h6 class="post-title mt-1 mb-0">
                               Dubai Aquarium Tour
                               <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked "></span>
@@ -1379,7 +1493,7 @@ require_once __DIR__ . '/Config/Config.php';
 <span class="fa fa-star checked "></span>
 <span class="fa fa-star checked"></span>
  
-                            </h2>
+                            </h6>
                           </div>
                           <!-- /.post-header -->
                           <div class="post-content">
@@ -1445,14 +1559,7 @@ require_once __DIR__ . '/Config/Config.php';
                       <li>Transfers</li>
                       <li>Food</li>
                     </ul>
-                    <h5>Pick Drop Timing</h5>
-                    <hr>
-                    <p>
-                      Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                      condimentum nibh, ut fermentum. Nulla vitae elit libero, a
-                      pharetra augue. Donec id elit non mi porta gravida at eget
-                      metus.
-                    </p>
+                   
                   </div>
                 </aside>
                 <!-- /column .sidebar -->
@@ -1465,32 +1572,33 @@ require_once __DIR__ . '/Config/Config.php';
     <!-- Modal Details for Item 1 End -->
 
     <!-- Modal Details for Item 02 -->
-    <div id="modalDetailsItem02" class="modal-popup zoom-anim-dialog mfp-hide">
+    <div id="modalDetailsItem02" class="modal-popup zoom-anim-dialog mfp-hide" style="width: 700px;">
         <div class="small-dialog-header">
             <h3>Dubai Aquarium Tour</h3>
         </div>
-        <div class="content pb-1">
-            <figure><img src="./assets/images/2.jpg" alt="" class="img-fluid"></figure>
+        <div class="pb-1">
+            <figure><img src="./assets/images/2.jpg" alt="" class="img-fluid" style="    width: 1000px;
+                 height: 300px;"></figure>
  
         </div>
-        <article class="post">
+                <article class="post">
                       <div class="card">
                         <div class="card-body">
                           <div class="post-header">
                             <!-- /.post-category -->
-                            <h2 class="post-title mt-1 mb-0">
+                            <h6 class="post-title mt-1 mb-2">
                               Dubai Aquarium Tour
                               <span class="fa fa-star checked"></span>
                                 <span class="fa fa-star checked "></span>
                                 <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked "></span>
+                                    <span class="fa fa-star checked "></span>
                                 <span class="fa fa-star checked"></span>
  
-                            </h2>
+                            </h6>
                           </div>
                           <!-- /.post-header -->
                           <div class="post-content">
-                            <h4>Overview</h4>
+                            <h6>Overview</h6>
                             <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam quis risus eget urna mollis ornare vel. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh. Cras mattis consectetur purus.</p>
                        
                             <div class="row">
@@ -1514,7 +1622,7 @@ require_once __DIR__ . '/Config/Config.php';
                                 <div class="price-container">
                                   <h5>From AED 125.00</h5>
                                   <p>Land Expeditions Price Guarantee</p>
-                                  <a class="btn btn-sm btn-danger center-block" data-bs-toggle="modal" data-bs-target="#select-product" style="display: block;">Add</a>
+                                  <a  href="javascript:;"class="btn btn-sm btn-danger center-block" data-bs-toggle="modal" style="display: block;">Add</a>
                                 </div>
                               </div>
                             </div>
@@ -1526,7 +1634,7 @@ require_once __DIR__ . '/Config/Config.php';
                         
                       </div>
                       <!-- /.card -->
-                    </article>
+                </article>
                   </div>
                 </div>
                 <!-- /column -->
@@ -1539,79 +1647,7 @@ require_once __DIR__ . '/Config/Config.php';
      
     </div>
     <!-- Modal Details for Item 02 End -->
-    <div id="editmodal" class="modal-popup zoom-anim-dialog mfp-hide">
-        <div class="small-dialog-header">
-            <h3>Dubai Aquarium Tour</h3>
-        </div>
-        <div class="content pb-1">
-            <figure><img src="./assets/images/2.jpg" alt="" class="img-fluid"></figure>
- 
-        </div>
-        <article class="post">
-                      <div class="card">
-                        <div class="card-body">
-                          <div class="post-header">
-                            <!-- /.post-category -->
-                            <h2 class="post-title mt-1 mb-0">
-                              Dubai Aquarium Tour
-                              <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked "></span>
-                                <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked "></span>
-                                <span class="fa fa-star checked"></span>
- 
-                            </h2>
-                          </div>
-                          <!-- /.post-header -->
-                          <div class="post-content">
-                            <h4>Overview</h4>
-                            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam quis risus eget urna mollis ornare vel. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh. Cras mattis consectetur purus.</p>
-                       
-                            <div class="row">
-                              <div class="col-sm-7">
-                                <ul>
-                                <li><span class="icon"><i class="fas fa-wifi">Free Wifi</li></i></span>
-                                  
-                                 
-
-                                  <li><span class="icon"><i class="fas fa-ac">Air Conditioning</li></i></span>
-                      
-
-                                  <li><span class="icon"><i class="fas fa-parking"> Parking Available</li></i></span>
-                                 
-
-                                  <li><span class="icon"><i class="fas fa-service">Business Service</li></i></span>
-                                 
-                                </ul>
-                              </div>
-                              <div class="col-sm-5">
-                                <div class="price-container">
-                                  <h5>From AED 125.00</h5>
-                                  <p>Land Expeditions Price Guarantee</p>
-                                  <a class="btn btn-sm btn-danger center-block" data-bs-toggle="modal" data-bs-target="#select-product" style="display: block;">Add</a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          
-                          <!-- /.post-content -->
-                        </div>
-                        <!--/.card-body -->
-                        
-                      </div>
-                      <!-- /.card -->
-                    </article>
-                  </div>
-                </div>
-                <!-- /column -->
-            
-
-                </div>
-            </div>
-        
-        </div>
-     
-    </div>
+  
     <!-- Modal Details for Item 03 -->
     <div id="modalDetailsItem03" class="modal-popup zoom-anim-dialog mfp-hide">
         <div class="small-dialog-header">
@@ -1811,11 +1847,137 @@ require_once __DIR__ . '/Config/Config.php';
         </div>
     </div>
     <!-- Modal Details for Item 12 End -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+      <span id="closeModalBtn" class="close">&times;</span>
+     
+    <form>
+            <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="dropdown1">Transport Type</label>
+            <select class="form-control" id="dropdown1">
+              <option value="option1">SIC</option>
+              <option value="option2">SIC</option>
+              <option value="option3">SIC</option>
+            </select>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label for="dropdown2">Pickup Location</label>
+            <select class="form-control" id="dropdown2">
+              <option value="option1">Anywhere in Dubai</option>
+              <option value="option2">Bur Dubai</option>
+              <option value="option3">Dubai Airport</option>
+            </select>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label for="date">Date:</label>
+            <input type="date" class="form-control" id="date">
+          </div>
+        </div>
+            </div>
+    
 
+            <div class="row mb-8 justify-content-center ">
+        <div class="col-md-12 col-12">
+            <div class="mb-4 border-bottom pb-2">
+             <h4 class="mb-0">Number of People</h4>
+        </div>
+        <div class="row">
+            <div class="col-12 mb-4">
+                <div class="d-flex justify-content-between">
+                     <div>
+                        <h6 class="text-dark">Adult</h6>
+                    </div>
+                    <div class="input-group w-auto justify-content-end align-items-center">
+                                <input type="button" value="-" class="button-minus border rounded-circle  icon-shape icon-sm mx-1 " data-field="quantity">
+                                <input type="number" step="1" max="10" value="1" name="quantity" class="quantity-field border-0 text-center w-25">
+                                <input type="button" value="+" class="button-plus border rounded-circle icon-shape icon-sm " data-field="quantity">
+                    </div>
+                </div>
+        </div>
+        <div class="col-12 mb-4">
+            <div class="d-flex justify-content-between">
+                    <div>
+                 <h6 class="text-dark">Adult</h6>
+                    </div>
+                 <div class="input-group w-auto justify-content-end align-items-center">
+                    <input type="button" value="-" class="button-minus border rounded-circle  icon-shape icon-sm mx-1 " data-field="quantity">
+                    <input type="number" step="1" max="10" value="1" name="quantity" class="quantity-field border-0 text-center w-25">
+                    <input type="button" value="+" class="button-plus border rounded-circle icon-shape icon-sm lh-0" data-field="quantity">
+                </div>
+            </div>
+        </div>
+        <div class="col-12 mb-4">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <h6 class="text-dark">Adult</h6>
+                    </div>
+                    <div class="input-group w-auto justify-content-end align-items-center">
+                            <input type="button" value="-" class="button-minus border rounded-circle  icon-shape icon-sm mx-1 lh-0" data-field="quantity">
+                            <input type="number" step="1" max="10" value="1" name="quantity" class="quantity-field border-0 text-center w-25">
+                            <input type="button" value="+" class="button-plus border rounded-circle icon-shape icon-sm lh-0" data-field="quantity">
+                    </div>
+                </div>
+        </div>
+
+        <div class="col-6">
+          <div class="form-group">
+                <label for="name">Leading Guest Name*</label>
+                <input type="name" class="form-control" id="guestname" aria-describedby="" placeholder="Enter Leading Guest Name*">
+          </div>
+        </div>
+
+        <div class="col-6">
+          <div class="form-group">
+                <label for="name">
+                        Agent Reference No*</label>
+                <input type="text" class="form-control" id="refnym" aria-describedby="" placeholder="Enter Agent Reference No*">
+          </div>
+        </div>
+
+        <div class="col-6">
+          <div class="form-group">
+                <label for="location">
+                Pickup Location*</label>
+                <input type="text" class="form-control" id="location" aria-describedby="" placeholder="Enter Pickup Location*">
+          </div>
+        </div>
+        
+
+        <div class="col-6">
+          <div class="form-group">
+                <label for="location">
+                Drop off Location*</label>
+                <input type="text" class="form-control" id="droplocation" aria-describedby="" placeholder="Enter Drop off Location*">
+          </div>
+        </div>
+
+
+        <div class="col-12">
+          <div class="form-group">
+                <label for="location">
+                Remarks</label>
+                <textarea name="" class="form-control rborder" id=""></textarea>
+          </div>
+        </div>
+            </div>
+   
+
+
+    </form>
+ 
+   <a href="javascript:;" class="add-options-item-to-cart"> <button  class="btn" style="background-color: #244b5a;">Add to Cart</button>  </a>
+  </div>
     <!-- Back to top button -->
     <div id="toTop">
         <i class="icon icon-chevron-up"></i>
     </div>
+</div>
 
     <!-- Vendor Javascript Files -->
     <script src="../vendor/jquery/jquery.min.js"></script>
@@ -1835,7 +1997,43 @@ require_once __DIR__ . '/Config/Config.php';
     <script src="../vendor/scrollreveal/js/scrollreveal.min.js"></script>
     <script src="../vendor/lazyload/js/lazyload.min.js"></script>
     <script src="../vendor/sticky-kit/js/sticky-kit.min.js"></script>
+    <script>
+        function incrementValue(e) {
+        e.preventDefault();
+        var fieldName = $(e.target).data('field');
+        var parent = $(e.target).closest('div');
+        var currentVal = parseInt(parent.find('input[name=' + fieldName + ']').val(), 10);
 
+        if (!isNaN(currentVal)) {
+            parent.find('input[name=' + fieldName + ']').val(currentVal + 1);
+        } else {
+            parent.find('input[name=' + fieldName + ']').val(0);
+        }
+    }
+
+    function decrementValue(e) {
+        e.preventDefault();
+        var fieldName = $(e.target).data('field');
+        var parent = $(e.target).closest('div');
+        var currentVal = parseInt(parent.find('input[name=' + fieldName + ']').val(), 10);
+
+        if (!isNaN(currentVal) && currentVal > 0) {
+            parent.find('input[name=' + fieldName + ']').val(currentVal - 1);
+        } else {
+            parent.find('input[name=' + fieldName + ']').val(0);
+        }
+    }
+
+    $('.input-group').on('click', '.button-plus', function(e) {
+        incrementValue(e);
+    });
+
+    $('.input-group').on('click', '.button-minus', function(e) {
+        decrementValue(e);
+    });
+
+
+    </script>    
     <!-- Stripe Javascript Files -->
     <script src="https://js.stripe.com/v3/"></script>
     <script src="assets/js/stripe-func.js"></script>

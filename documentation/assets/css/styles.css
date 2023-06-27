@@ -195,8 +195,8 @@ a.btn-orange.hover {
 
 .btn-red,
 a.btn-red {
-  background: brown;
-  border: 1px solid brown;
+  background: #244b5a;
+  border: 1px solid #244b5a;
   color: #fff !important;
 }
 
@@ -367,7 +367,7 @@ select {
 }
 
 .body-coral .branding .text-highlight {
-  color: brown;
+  color: #244b5a;
 }
 
 .body-pink .branding .text-highlight {
@@ -401,7 +401,7 @@ select {
 }
 
 .body-coral .branding .icon {
-  color: brown;
+  color: #244b5a;
 }
 
 .body-pink .branding .icon {
@@ -538,7 +538,7 @@ select {
 }
 
 .body-coral .doc-header .doc-title {
-  color: brown;
+  color: #244b5a;
 }
 
 .body-pink .doc-header .doc-title {
@@ -959,15 +959,15 @@ select {
 }
 
 .body-coral .header {
-  border-color: brown;
+  border-color: #244b5a;
 }
 
 .body-coral a {
-  color: brown;
+  color: #244b5a;
 }
 
 .body-coral a:hover {
-  color: brown;
+  color: #244b5a;
 }
 
 /* Sidebar */
@@ -1028,8 +1028,8 @@ select {
 }
 
 .body-coral .doc-menu .nav-link.active {
-  color: brown;
-  border-color: brown;
+  color: #244b5a;
+  border-color: #244b5a;
 }
 
 .body-pink .doc-menu .nav-link.active {
@@ -1089,7 +1089,7 @@ select {
 }
 
 .body-coral .doc-sub-menu .nav-link.active {
-  color: brown;
+  color: #244b5a;
 }
 
 .body-pink .doc-sub-menu .nav-link.active {
@@ -1480,7 +1480,7 @@ select {
 }
 
 .cards-section .item-red .item-inner {
-  border-top: 3px solid brown;
+  border-top: 3px solid #244b5a;
 }
 
 .cards-section .item-red .item-inner:hover .title {
@@ -1488,7 +1488,7 @@ select {
 }
 
 .cards-section .item-red .icon {
-  color: brown;
+  color: #244b5a;
 }
 
 .cards-section .item-pink .item-inner {

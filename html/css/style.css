@@ -54,7 +54,7 @@ Author URL: https://themeforest.net/user/ultimatewebsolutions/
   -moz-animation: circle infinite 0.95s linear;
   -o-animation: circle infinite 0.95s linear;
   animation: circle infinite 0.95s linear;
-  border: 2px solid brown;
+  border: 2px solid #244b5a;
   border-top-color: rgba(0, 0, 0, 0.2);
   border-right-color: rgba(0, 0, 0, 0.2);
   border-bottom-color: rgba(0, 0, 0, 0.2);
@@ -154,7 +154,7 @@ html ::-webkit-scrollbar-track-piece {
 }
 
 html ::-webkit-scrollbar-thumb {
-  background-color: brown;
+  background-color: #244b5a;
   border-radius: none;
 }
 
@@ -200,7 +200,7 @@ p {
 }
 
 a {
-  color: brown;
+  color: #244b5a;
   text-decoration: none;
   -moz-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
@@ -262,10 +262,10 @@ button:focus {
 ==================================== */
 
 .btn-modal {
-  border: 2px solid brown;
+  border: 2px solid #244b5a;
   font-family: inherit;
   color: #fff;
-  background: brown;
+  background: #244b5a;
   cursor: pointer;
   padding: 7px 15px;
   display: inline-block;
@@ -306,8 +306,8 @@ button:focus {
 }
 
 .btn-modal-close:hover {
-  border: 2px solid brown;
-  color: brown;
+  border: 2px solid #244b5a;
+  color: #244b5a;
 }
 
 .modal-header .close {
@@ -315,7 +315,7 @@ button:focus {
 }
 
 .alert-text-strong {
-  color: brown;
+  color: #244b5a;
   font-weight: 700;
 }
 
@@ -619,19 +619,19 @@ header.static {
 /* Header Menu Color */
 
 .main-menu > ul > li span:hover > a {
-  color: brown;
+  color: #244b5a;
 }
 
 .main-menu ul ul {
-  border-top: 2px solid brown;
+  border-top: 2px solid #244b5a;
 }
 
 .main-menu ul ul li:hover > a {
-  color: brown;
+  color: #244b5a;
 }
 
 .main-menu ul ul li span > a:hover {
-  color: brown;
+  color: #244b5a;
 }
 
 /* Header Menu Chevron Down */
@@ -673,7 +673,7 @@ ul#menuIcons li i {
 }
 
 ul#menuIcons li a {
-  color: brown;
+  color: #244b5a;
 }
 
 ul#menuIcons li a:hover {
@@ -741,8 +741,8 @@ ul#menuIcons li a:hover {
 
 .sticky-nav a.list-group-item.active {
   color: #fff;
-  background-color: brown;
-  border-color: brown;
+  background-color: #244b5a;
+  border-color: #244b5a;
 }
 
 .sticky-nav a:before {
@@ -752,13 +752,13 @@ ul#menuIcons li a:hover {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: brown;
+  background-color: #244b5a;
 }
 
 .sticky-nav a.active,
 .sticky-nav a:hover {
-  color: brown;
-  border-color: brown;
+  color: #244b5a;
+  border-color: #244b5a;
 }
 
 .sticky-nav a i {
@@ -778,7 +778,7 @@ ul#menuIcons li a:hover {
 ==================================== */
 
 .sub-header {
-  background-color: #121921;
+  background-color: #244b5a;
   padding: 15px 0;
   margin-top: 59px;
 }
@@ -801,7 +801,7 @@ footer.main-footer {
   padding-top: 90px;
   padding-bottom: 90px;
   color: #bcbcbc;
-  background-color: #121921;
+  background-color: #244b5a;
   border-top: 1px solid #ddd;
 }
 
@@ -826,7 +826,7 @@ a.footer-link {
 }
 
 .contact-links i {
-  color: brown;
+  color: #244b5a;
   margin-right: 10px;
   font-size: 18px;
   vertical-align: middle;
@@ -896,7 +896,7 @@ ul#subFooterLinks li:after {
 }
 
 ul#subFooterLinks i {
-  color: brown;
+  color: #244b5a;
 }
 
 /* Sub Footer Links */
@@ -936,7 +936,7 @@ ul#subFooterLinks li:after {
 }
 
 ul#subFooterLinks i {
-  color: brown;
+  color: #244b5a;
 }
 
 /* Hero
@@ -949,7 +949,7 @@ ul#subFooterLinks i {
 }
 
 .hero-home.bg-mockup {
-  background: brown url(../img/bg/bg.svg) no-repeat center bottom;
+  background: #244b5a url(../img/bg/bg.svg) no-repeat center bottom;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -1006,7 +1006,7 @@ ul#subFooterLinks i {
 .main-title span em {
   width: 60px;
   height: 2px;
-  background-color: brown;
+  background-color: #244b5a;
   display: block;
   margin-top: 30px;
 }
@@ -1014,7 +1014,7 @@ ul#subFooterLinks i {
 .order .main-title span em {
   width: 60px;
   height: 2px;
-  background-color: brown;
+  background-color: #244b5a;
   display: block;
   margin-top: 0;
 }
@@ -1029,7 +1029,7 @@ ul#subFooterLinks i {
 a.btn-1,
 .btn-1 {
   border: none;
-  color: brown;
+  color: #244b5a;
   background: #fff;
   cursor: pointer;
   padding: 7px 20px;
@@ -1052,7 +1052,7 @@ a.btn-1,
 
 a.btn-1:hover,
 .btn-1:hover {
-  background-color: brown;
+  background-color: #244b5a;
   color: #fff;
 }
 
@@ -1066,7 +1066,7 @@ a.btn-2,
 .btn-2 {
   border: none;
   color: #fff;
-  background: brown;
+  background: #244b5a;
   cursor: pointer;
   padding: 7px 20px;
   display: inline-block;
@@ -1087,7 +1087,7 @@ a.btn-2,
 
 a.btn-2:hover,
 .btn-2:hover {
-  background-color: #121921;
+  background-color: #244b5a;
   color: #fff;
 }
 
@@ -1116,7 +1116,7 @@ a.btn-2:hover,
   position: relative;
   height: 35px;
   width: 25px;
-  border: solid 2px brown;
+  border: solid 2px #244b5a;
   border-radius: 20px;
 }
 
@@ -1125,7 +1125,7 @@ a.btn-2:hover,
   height: 3px;
   width: 3px;
   border-radius: 50%;
-  background-color: brown;
+  background-color: #244b5a;
   position: absolute;
   top: 7px;
   left: 11px;
@@ -1185,7 +1185,7 @@ a.btn-2:hover,
 }
 
 .hero-order.bg-img {
-  background: brown url(../img/bg/bg.jpg) no-repeat center bottom;
+  background: #244b5a url(../img/bg/bg.jpg) no-repeat center bottom;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -1223,7 +1223,7 @@ a.btn-2:hover,
   top: -30px;
   width: 50px;
   height: 3px;
-  background-color: brown;
+  background-color: #244b5a;
 }
 
 /* Contact Links*/
@@ -1239,7 +1239,7 @@ a.btn-2:hover,
 }
 
 .hero-order .contact-info a i {
-  color: brown;
+  color: #244b5a;
   margin-right: 5px;
 }
 
@@ -1275,7 +1275,7 @@ a.btn-2:hover,
 }
 
 .hero-order .score strong {
-  background-color: brown;
+  background-color: #244b5a;
   -webkit-border-radius: 5px 0 5px 5px;
   -moz-border-radius: 5px 0 5px 5px;
   -ms-border-radius: 5px 0 5px 5px;
@@ -1330,7 +1330,7 @@ a.btn-2:hover,
   margin: 0 auto;
   margin-bottom: 1rem;
   font-size: 3.5rem;
-  color: brown;
+  color: #244b5a;
 }
 
 .box p {
@@ -1358,14 +1358,14 @@ a.btn-2:hover,
 .border-multiple > span.first {
   width: 6px;
   height: 3px;
-  background-color: brown;
+  background-color: #244b5a;
 }
 
 .border-multiple > span.second,
 .border-multiple > span.third {
   width: 25px;
   height: 3px;
-  background-color: brown;
+  background-color: #244b5a;
 }
 
 /* Banner
@@ -1476,7 +1476,7 @@ a.btn-2:hover,
   font-size: 1.125rem;
   font-weight: normal;
   float: right;
-  color: brown;
+  color: #244b5a;
 }
 
 .card {
@@ -1591,7 +1591,7 @@ a.btn-2:hover,
 
 #markerInfo a {
   font-size: 13px;
-  color: brown;
+  color: #244b5a;
 }
 
 #markerInfo a:hover {
@@ -1601,7 +1601,7 @@ a.btn-2:hover,
 #markerInfo span strong {
   display: block;
   font-weight: 500;
-  color: brown;
+  color: #244b5a;
   margin: 10px 0;
 }
 
@@ -1621,7 +1621,7 @@ a.btn-2:hover,
 }
 
 #infoboxPhone {
-  color: brown;
+  color: #244b5a;
   font-weight: 500;
 }
 
@@ -1694,7 +1694,7 @@ a.btn-2:hover,
 .filter-box-link:focus,
 .filter-box-link:active,
 .filter-box-link:visited {
-  color: brown;
+  color: #244b5a;
   font-size: 11px;
   font-weight: 500;
   background: #fff;
@@ -1705,12 +1705,12 @@ a.btn-2:hover,
 }
 
 .filter-box-link:hover {
-  color: brown;
+  color: #244b5a;
   text-decoration: underline;
 }
 
 .price-box-desc {
-  color: brown;
+  color: #244b5a;
   font-size: 11px;
   font-weight: 500;
   background: #fff;
@@ -1782,7 +1782,7 @@ a.btn-2:hover,
   bottom: 0;
   height: 23px;
   font-weight: 600;
-  color: brown;
+  color: #244b5a;
   font-size: 20px;
   margin-bottom: 10px;
 }
@@ -1791,7 +1791,7 @@ a.btn-2:hover,
 .order-list-delete a:hover,
 .order-list-delete a:focus,
 .order-list-delete a:visited {
-  color: brown;
+  color: #244b5a;
   outline: none;
 }
 
@@ -1988,7 +1988,7 @@ input.qtyminus {
 }
 
 .item-body ul li a:hover {
-  color: brown;
+  color: #244b5a;
 }
 
 .item-body ul li i {
@@ -2033,7 +2033,7 @@ input.qtyminus {
 /* Ribbon Size */
 
 .ribbon-size {
-  background-color: brown;
+  background-color: #244b5a;
   color: #fff;
   display: inline-block;
   position: absolute;
@@ -2077,7 +2077,7 @@ textarea.form-control {
 input.form-control:focus,
 textarea.form-control:focus {
   background: transparent;
-  border-color: brown;
+  border-color: #244b5a;
   outline: none;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -2101,12 +2101,12 @@ input.form-control:disabled {
 }
 
 .search-wrap input[type="text"]:hover {
-  border-color: brown;
+  border-color: #244b5a;
 }
 
 .search-wrap input[type="text"]:active,
 .search-wrap input[type="text"]:focus {
-  border-color: brown;
+  border-color: #244b5a;
 }
 
 .search-wrap input[type="text"] {
@@ -2154,7 +2154,7 @@ input.form-control:disabled {
 }
 
 .radio-wrapper input:checked ~ .checkmark {
-  border: 1px solid brown;
+  border: 1px solid #244b5a;
 }
 
 .radio-wrapper input:checked ~ .checkmark:after {
@@ -2191,11 +2191,11 @@ input.form-control:disabled {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: brown;
+  background: #244b5a;
 }
 
 .radio-wrapper:hover .checkmark {
-  border: 1px solid brown;
+  border: 1px solid #244b5a;
 }
 
 /* Radio in Order Summary */
@@ -2242,7 +2242,7 @@ input.form-control:disabled {
   transform: rotate(45deg);
   width: 100px;
   display: block;
-  background: brown;
+  background: #244b5a;
   -webkit-box-shadow: 0 6px 10px -5px #000;
   -moz-box-shadow: 0 6px 10px -5px #000;
   box-shadow: 0 6px 10px -5px #000;
@@ -2260,8 +2260,8 @@ input.form-control:disabled {
   right: 30px;
   padding: 7px 8px 3px;
   background-color: #fff;
-  color: brown;
-  border: 1px solid brown;
+  color: #244b5a;
+  border: 1px solid #244b5a;
   z-index: 1;
   font-size: 18px;
   font-weight: 300;
@@ -2307,13 +2307,13 @@ input.form-control:disabled {
 }
 
 .nice-select:hover {
-  border-color: brown;
+  border-color: #244b5a;
 }
 
 .nice-select:active,
 .nice-select.open,
 .nice-select:focus {
-  border-color: brown;
+  border-color: #244b5a;
 }
 
 .nice-select:after {
@@ -2404,7 +2404,7 @@ input.form-control:disabled {
 
 .nice-select .list {
   background-color: #fff;
-  border: 1px solid brown;
+  border: 1px solid #244b5a;
   border-radius: 5px;
   box-sizing: border-box;
   opacity: 0;
@@ -2522,15 +2522,15 @@ input.form-control:disabled {
 .fl-form .fl-has-focus select.fl-select,
 .fl-form .fl-has-focus textarea.fl-textarea {
   background-color: #fff;
-  border-color: brown;
+  border-color: #244b5a;
 }
 
 .fl-form .fl-has-focus label.fl-label {
-  color: brown;
+  color: #244b5a;
 }
 
 .fl-form .fl-is-required:before {
-  color: brown;
+  color: #244b5a;
   padding: 10px 0 0;
 }
 
@@ -2542,9 +2542,9 @@ input.form-control:disabled {
 /* Form Buttons */
 
 .btn-form-func {
-  background: brown;
+  background: #244b5a;
   border-radius: 5px;
-  border: 2px solid brown;
+  border: 2px solid #244b5a;
   color: #fff;
   display: inline-block;
   overflow: hidden;
@@ -2623,7 +2623,7 @@ input.form-control:disabled {
 }
 
 .btn-form-func.btn-form-func-alt-color .icon {
-  border-left-color: brown;
+  border-left-color: #244b5a;
 }
 
 .btn-form-func.btn-form-func-alt-color:after {
@@ -2702,7 +2702,7 @@ label.cbx {
   content: "";
   width: 100%;
   height: 100%;
-  background: brown;
+  background: #244b5a;
   display: block;
   transform: scale(0);
   opacity: 1;
@@ -2710,7 +2710,7 @@ label.cbx {
 }
 
 .cbx:hover span:first-child {
-  border-color: brown;
+  border-color: #244b5a;
 }
 
 .inp-cbx {
@@ -2718,8 +2718,8 @@ label.cbx {
 }
 
 .inp-cbx:checked + .cbx span:first-child {
-  background: brown;
-  border-color: brown;
+  background: #244b5a;
+  border-color: #244b5a;
   animation: wave 0.4s ease;
 }
 
@@ -2746,14 +2746,14 @@ label.cbx {
 .terms-link:visited,
 .modify-order:visited {
   text-decoration: none;
-  color: brown;
+  color: #244b5a;
   margin-left: 5px;
   transition: none;
 }
 
 .terms-link:hover,
 .modify-order:hover {
-  color: brown;
+  color: #244b5a;
   text-decoration: underline;
 }
 
@@ -2773,8 +2773,8 @@ label.cbx {
 .parsley-errors-list {
   font-size: 10px !important;
   text-transform: uppercase;
-  border: 1px solid brown;
-  background-color: brown;
+  border: 1px solid #244b5a;
+  background-color: #244b5a;
   color: #fff;
   padding: 2px 0 0 3px !important;
   margin: 10px 0 10px 0 !important;
@@ -2792,7 +2792,7 @@ label.cbx {
   margin-top: -9px;
   pointer-events: none;
   position: absolute;
-  border-bottom: solid 6px brown;
+  border-bottom: solid 6px #244b5a;
   border-left: solid 6px transparent;
   border-right: solid 6px transparent;
 }
@@ -2805,17 +2805,17 @@ label.cbx {
 .order-header {
   text-align: left;
   padding: 5px 0;
-  background-color: #121921;
+  background-color: #244b5a;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
 
 #orderContainer h3 {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   color: #fff;
   margin-bottom: 0;
-  margin-left: 30px;
+  margin-left: 10px;
   margin-right: 30px;
 }
 
@@ -2848,7 +2848,7 @@ label.cbx {
 }
 
 #orderSumList li i {
-  color: brown;
+  color: #244b5a;
 }
 
 #orderContainer ul li span.price,
@@ -2941,7 +2941,7 @@ td {
 #toTop {
   width: 40px;
   height: 40px;
-  background-color: brown;
+  background-color: #244b5a;
   text-align: center;
   padding: 10px;
   line-height: 20px;

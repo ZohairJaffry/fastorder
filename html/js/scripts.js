@@ -517,27 +517,38 @@
 
     // Insert item into its dedicated row in the cart
     $("#cartItem" + id + rowId).html(
-      '<div class="order-list-details"><h4>' +
+      '<div class="order-list-details">' +
+        "<h4>" +
         itemTitle +
-        "<br/> <small>" +
-        "SIC - Dera Dubai - 31 May 2023" +
-        "<br/>" +
-        "Adults x2 - AED 500" +
-        "<br/>" +
-        "Children x3 - AED 250" +
-        "<br/>" +
-        "VAT - AED 25" +
+        "<br/> <small>SIC - Dera Dubai - 31 May 2023<br/>Adults x2 - AED 500<br/>Children x3 - AED 250<br/>VAT - AED 25" +
         extraTitle +
-        '</small> </h4> <div class="qty-buttons"> <input type="button" value="+" class="qtyplus" name="plus"> <input type="text" name="qty" value="1" class="qty form-control"> <input type="button" value="-" class="qtyminus" name="minus"> </div><div class="order-list-price format-price">' +
+        "</small> </h4>" +
+        '<div class="order-list-price format-price">' +
         (itemPrice * 2).toFixed(2) +
-        '</div><div class="order-list-actions" style="text-align: right;"><a href="#modalDetailsItem02" class="item-body-link modal-opener" id="editCartItem' +
+        "</div>" +
+        '<div class="order-list-actions">' +
+        '<a href="javascript:void(0);" id="editCartItem' +
         id +
         rowId +
-        '"><i class="icon icon-edit"></i></a><a href="javascript:;" id="deleteCartItem' +
+        '"><i class="icon icon-edit"></i></a>' +
+        '<a href="javascript:;" id="deleteCartItem' +
         id +
         rowId +
-        '"><i class="icon icon-trash"></i></a></div></div>  '
+        '"><i class="icon icon-trash"></i></a>' +
+        "</div>" +
+        "</div>"
     );
+    $(document).on("click", "#editCartItem" + id + rowId, function () {
+      // Open the modal with the matching ID
+      $("#myModal").show();
+    });
+
+    // Add event listener to close the modal
+    $(document).on("click", "#closeModalBtn", function () {
+      // Hide the modal
+      $("#myModal").hide();
+    });
+    // Add event listener to open the modal
 
     // Add event listener to the modal-opener class
 
@@ -858,6 +869,22 @@
         extraTitle,
         itemPrice
       );
+    }
+  }
+
+  function incrementValue(e) {
+    e.preventDefault();
+    var fieldName = $(e.target).data("field");
+    var parent = $(e.target).closest("div");
+    var currentVal = parseInt(
+      parent.find("input[name=" + fieldName + "]").val(),
+      10
+    );
+
+    if (!isNaN(currentVal)) {
+      parent.find("input[name=" + fieldName + "]").val(currentVal + 1);
+    } else {
+      parent.find("input[name=" + fieldName + "]").val(0);
     }
   }
 
